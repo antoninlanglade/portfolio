@@ -1,0 +1,64 @@
+@import "~config/styles.scss";
+
+.component.projects {
+	display : inline-block;
+	vertical-align: top;
+	.left, .right {
+		vertical-align: top;
+		display : inline-block;
+		margin : 30px;
+	}
+	.project {
+		position : relative;
+		cursor: pointer;
+		padding: 5px 5px 5px 10px;
+		&.purple {
+			&:after, &:before {
+  				background: #6800ee;
+  			}
+	  	}
+	  	&.green {
+	  		&:after, &:before {
+	  			background: #46d6a5;
+	  		}
+	  	}
+	  	&.blue {
+	  		&:after, &:before {
+	  			background: #4492ff;
+	  		}
+	  	}
+	  	&.yellow {
+	  		&:after, &:before {
+	  			background: #ffaf3f;
+	  		}
+	  	}
+	  	&.orange {
+	  		&:after, &:before {
+	  			background: #ff605d;
+	  		}
+	  	}
+	  	&:after, &:before {
+	  		content : "";
+	  		position : absolute;
+	  		top : calc(50% - 1px);
+	  		left : -5px;
+	  		width: 10px;
+	  		height : 2px;
+	  		background : black;
+	  		
+	  	}
+	  	&:after {
+	  		transform : rotate(90deg);
+	  		transition : all 0.25s;
+	  	}
+	  	.date {
+	  		font-size: 12px;
+	  		color : $lightGrey;
+	  	}
+	  	&:hover {
+	  		&:after {
+	  			transform : rotate(180deg);
+	  		}
+	  	}
+  	}
+}

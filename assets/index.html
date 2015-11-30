@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyProject</title>
+    <meta name="fragment" content="!">
+
+    <link rel="icon" type="image/png" href="{path}img/favicon.png" />
+    <link rel="apple-touch-icon" href="{path}img/apple-touch-icon.png">
+
+    <meta property="og:title" content="Your-project">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.danparis.fr">
+    <meta property="og:image" content="http://www.danparis.fr/images/thumb.jpg">
+    <meta property="og:description" content="Your-description">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="viewport" content="user-scalable=yes">
+</head>
+<body>
+<style>
+    body, html {
+        padding : 0;
+        margin : 0;
+    }
+    #loader{
+        width : 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 2;
+        background: white url('{path}img/loading.gif') no-repeat center;
+    }
+</style>
+<div id="loader"></div>
+<div id="container"></div>
+<script type="text/javascript">
+    (function(d, w) {
+        w.config = {
+            path: '{path}',
+            locales: [],
+            locale: null,
+            env: '{env}'
+        };
+        var s = ['{path}js/main.js'], js, i = 0;
+        (!('Promise' in window) || !('pushState' in history)) && s.unshift('{path}js/polyfill.js');
+        (function l() {
+            js = d.createElement('script');
+            js.onload = i < s.length - 1?l:null;
+            js.src = s[i++];
+            d.body.appendChild(js);
+        })();
+    })(document, window);
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Tmp
+dist
+.tmp
+.tmp-dist
+
+# Modules
+src/bundles/dan/modules/modules.js
+
+# Deploy
+./deploy.config.json
+backup
+
+# Other
+.DS_Store
+.idea
+node_modules
+npm-debug.log

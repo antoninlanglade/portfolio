@@ -1,0 +1,6 @@
+{
+  "image": [".jpg", ".png", ".jpeg", ".gif"],
+  "video": [".webm", ".ogv", ".mp4"],
+  "audio" : [".mp3", ".ogg"],
+  "json" : [".json"]
+}

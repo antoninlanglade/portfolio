@@ -1,0 +1,13 @@
+{
+  "Commands": "Commandes",
+  "Features": "Caractéristiques",
+  "to launch your project with livereload": "lance le projet avec livereload",
+  "to build your project": "compile le projet",
+  "to build your project & launch a test server": "compile le projet, puis lance un serveur de test",
+  "to enable debug mode": "active le mode de debug",
+  "to deploy your project": "pour déployer le projet",
+  "to force the deploy or backup environment": "force un environement de déploiement ou de backup",
+  "to specify the project path": "spécifie un path pour le projet",
+  "to build & deploy your project" : "compiler et déployer le projet",
+  "to backup the server dist folder on local" : "sauvegarder le distant placé sur le serveur en local"
+}

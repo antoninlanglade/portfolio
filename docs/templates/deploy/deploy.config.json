@@ -1,0 +1,8 @@
+{
+  "prod" : {
+    "host": "www.yourHostAddress.com",
+    "username": "yourUsername",
+    "password": "yourPassword",
+    "path" : "/"
+  }
+}

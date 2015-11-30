@@ -1,0 +1,59 @@
+@import "~config/styles.scss";
+
+.component.home {
+  padding: 10px;
+  color: #5b5b5b;
+
+  h1, h2 {
+    font-size: 55px;
+    margin: 20px 0 10px 0;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  li {
+    list-style-type: circle;
+    margin: 2px 0 0 40px;
+    position: relative;
+
+    .path {
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    img {
+      position: absolute;
+      height: 19px;
+      width: auto;
+      margin-left: 5px;
+    }
+  }
+
+  a {
+    color: #5b5b5b;
+    text-decoration: none;
+    font-size: 14px;
+
+    &:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+
+  .lang {
+    margin-left: 10px;
+
+    &.focus {
+      cursor: default;
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    background: #5b5b5b;
+    color: #fff;
+    padding: 2px;
+  }
+}

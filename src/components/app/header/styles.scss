@@ -1,0 +1,11 @@
+@import "~config/styles.scss";
+
+.component.header {
+  .title {
+    display : inline-block;
+    margin : 30px;
+    .developer {
+      color : $darkGrey;
+    }  
+  }
+}
