@@ -6,12 +6,12 @@
 	.left, .right {
 		vertical-align: top;
 		display : inline-block;
-		margin : 30px;
+		margin: 70px 0 0 140px;
 	}
 	.project {
 		position : relative;
 		cursor: pointer;
-		padding: 5px 5px 5px 10px;
+		padding: 5px 5px 5px 15px;
 		&.purple {
 			&:after, &:before {
   				background: #6800ee;
@@ -52,6 +52,7 @@
 	  		transition : all 0.25s;
 	  	}
 	  	.date {
+	  		margin : 0 0 0 10px;
 	  		font-size: 12px;
 	  		color : $lightGrey;
 	  	}

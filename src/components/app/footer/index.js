@@ -15,9 +15,8 @@ export default class Footer extends React.Component {
         return (
             <div className="component footer">
                 <Link>About</Link>
-                <Link>Mail</Link>
-                <Link>Twitter</Link>
-                <Link>Github</Link>
+                <Link href="https://twitter.com/antoninlanglade" target="blank">Twitter</Link>
+                <Link href="https://github.com/antoninlanglade" target="blank">Github</Link>
             </div>
         );
     }

@@ -3,9 +3,10 @@
 .component.header {
   .title {
     display : inline-block;
-    margin : 30px;
+    margin: 70px 0 0 70px;
     .developer {
       color : $darkGrey;
+      padding: 10px 0 0 0;
     }  
   }
 }
