@@ -3,30 +3,37 @@
 .component.home {
     width : 100%;
     height : 100%;
-    overflow: hidden;
+    .arrows {
+      position : absolute;
+      right: 20px;
+      top : -30px;
+      cursor: pointer;
+      span {
+        margin : 0 10px;
+      }
+    }
     .project-list {
-      width : 100%;
+      margin : 0 0 0 70px;
+      width : calc(100% - 70px);
       height : 100%;
+      position : relative;
+      transition : 0.5s all;
       .project-item {
-          width : calc(34% - 90px);
+          cursor : pointer;
+          width : calc(100% / 3 - 90px);
           position: absolute;
           bottom: 0;
           padding : 45px;
           font-size: 40px;
-          &:nth-child(1) {
+          z-index: 2;
+          &:nth-child(2n+1) {
               height : calc(56% - 90px);
           }
-          &:nth-child(2) {
+          &:nth-child(2n+2) {
               height : calc(70% - 90px);
           }
-          &:nth-child(3) {
+          &:nth-child(2n+3) {
               height : calc(64% - 90px);
-          }
-          &:nth-child(4) {
-              height : calc(56% - 90px);
-          }
-          &:nth-child(5) {
-              height : calc(70% - 90px);
           }
       }
   }

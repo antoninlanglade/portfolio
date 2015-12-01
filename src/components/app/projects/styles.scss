@@ -51,6 +51,9 @@
 	  		transform : rotate(90deg);
 	  		transition : all 0.25s;
 	  	}
+	  	&:before {
+	  		transition : all 0.25s;
+	  	}
 	  	.date {
 	  		margin : 0 0 0 10px;
 	  		font-size: 12px;
@@ -58,7 +61,10 @@
 	  	}
 	  	&:hover {
 	  		&:after {
-	  			transform : rotate(180deg);
+	  			transform : rotate(0deg);
+	  		}
+	  		&:before {
+	  			
 	  		}
 	  	}
   	}

@@ -24,6 +24,7 @@ body, html, #container {
 	width : 100%;
 	height : 100%;
 	font-family : "Apercu";
+	user-select: none;
 }
 a {
 	text-decoration: none;
@@ -36,6 +37,7 @@ a {
 	width : 100%;
 	height: 100%;
 	background : #f2f2f2;
+	overflow: hidden;
 	.page {
 		position : absolute;
 		bottom : 0;
