@@ -38,13 +38,74 @@ a {
 	height: 100%;
 	background : #f2f2f2;
 	overflow: hidden;
-	.page {
+	.pages {
 		position : absolute;
 		bottom : 0;
 		right: 0;
 		width : 80%;
 		height : 70%;
 		background : white;
+	}
+	.page {
+		width: 100%;
+		height : 100%;
+	}
+	.line-hover {
+		position : relative;
+		z-index: 1;
+		&:before {
+			content : "";
+			width : 100%;
+			height : 4px;
+			left : 0;
+			bottom : 0;
+			position : absolute;
+			background: black;
+			opacity: 0;
+			transition: height 0.20s, bottom 0.20s;
+			animation-fill-mode: forwards;
+		}
+		&.animationIn {
+			&:before {
+				opacity: 1;
+				animation : lineIn 0.5s;
+				animation-delay : 1s;
+			}
+		}
+		&:hover:before {
+			bottom : 0;
+			height : 30%;
+			animation : lineHoverIn 0.15s;
+			span {
+				z-index: 2;
+			}
+		}
+		
+	}
+}
+
+@keyframes lineHoverIn {
+	0% {
+		bottom : 0;
+		height: 4px;
+	}
+	100% {
+		bottom : 0;
+		height : 30%;
+	}
+}
+@keyframes lineIn {
+	0% {
+		bottom : 100%;
+		height: 0;
+	}
+	50% {
+		bottom : 15%;
+		height: 70%;
+	}
+	100% {
+		bottom : 0;
+		height : 4px;
 	}
 }
 

@@ -40,10 +40,14 @@ class Page extends React.Component {
         return this.state.content;
     }
 
+    get component() {
+        return this.refs.component;
+    }
+
     render() {
         return (
             <div className="page">
-                <this.state.content {...this.state.params}/>
+                <this.state.content {...this.state.params} ref="component"/>
             </div>
         );
     }
@@ -90,30 +94,32 @@ export default class App extends React.Component {
             next = this.nextPage;
 
         // New content
-        if(current.content != view) {
-            next.setContent(view, params);
+        next.setContent(view, params);
 
-            // Animation
-            next.el.style.opacity = 0;
-            TweenMax.killTweensOf([
-                current.el,
-                next.el
-            ]);
-            TweenMax.to(current.el, .25, {
-                opacity: 0,
-                onComplete: function() {
-                    current.setContent('div', params);
-                    current.el.style.display = 'none';
-                    next.el.style.display = '';
-                    TweenMax.to(next.el, .25, {
-                        opacity: 1
-                    });
-                }
-            });
+        // Animation
+        next.el.style.opacity = 0;
+        TweenMax.killTweensOf([
+            current.el,
+            next.el
+        ]);
+        TweenMax.to(current.el, .25, {
+            opacity: 0,
+            onComplete: () => {
+                current.setContent('div', params);
+                current.el.style.display = 'none';
+                next.el.style.display = '';
+                TweenMax.to(next.el, .25, {
+                    opacity: 1,
+                    onComplete : () => {
+                        next.component.componentDidAppear && next.component.componentDidAppear();
+                    }
+                });
+            }
+        });
 
-            // Swap
-            this.currentIndex = (this.currentIndex + 1) % this.pages.length;
-        }
+        // Swap
+        this.currentIndex = (this.currentIndex + 1) % this.pages.length;
+        
     }
 
     shouldComponentUpdate(props, state) {
@@ -125,8 +131,10 @@ export default class App extends React.Component {
         return (
             <div className="component app">
                 <Header />
-                <Page ref="p0" />
-                <Page ref="p1" />
+                <div className="pages">
+                    <Page ref="p0" />
+                    <Page ref="p1" />
+                </div>
                 <Footer />
             </div>
         );

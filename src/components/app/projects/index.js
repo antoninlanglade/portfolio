@@ -21,8 +21,10 @@ export default class Projects extends React.Component {
 			var column = key < middle ? projects.left : projects.right
 			column.push(
 				<div className={item.color + " project"} key={key} >
-				  <span className="name">{item.name}</span>
-				  <span className="date"> - {item.date}</span>
+          <Link route={item.route}>
+            <span className="name">{item.name}</span>
+            <span className="date"> - {item.date}</span>
+          </Link>
 				</div>
 			);
       });

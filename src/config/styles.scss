@@ -4,8 +4,9 @@ $imgPath: $path+'img/';
 $font : $path+'font/';
 
 // Responsive
-@mixin mobile() { @media screen and (max-width:767px) { @content; } } // @include mobile { }
-@mixin desktop() { @media screen and (min-width:768px) { @content; } } // @include desktop { }
+@mixin mobile() { @media screen and (max-width:749px) { @content; } } // @include mobile { }
+@mixin tablet() { @media screen and (max-width:999px) { @content; } } // @include mobile { }
+@mixin desktop() { @media screen and (min-width:1000px) { @content; } } // @include desktop { }
 
 $darkGrey : #999999;
 $lightGrey : #bfbfbf;

@@ -36,10 +36,10 @@ export default class Home extends React.Component {
                 visible : key < 3 ? true : false
             });
         });
-        this.componentDidAppear();
     }
 
     componentDidAppear() {
+        console.log('appear');
         this.animateItems();
     }
 
@@ -81,7 +81,7 @@ export default class Home extends React.Component {
         }
         this.animateItems();
 
-        this.dom.projectList.style.transform = "translateX("+(-this.offsetLeft*100/3)+"%)"
+        this.dom.projectList.style.transform = "translate3d("+(-this.offsetLeft*100/3)+"%, 0, 0)"
         
     }
     isItemWithDirection(index, direction) {
@@ -106,8 +106,8 @@ export default class Home extends React.Component {
         return (
             <div className="component home" onDrag={this.onWheel.bind(this)}>
                 <div className="arrows">
-                    <span onClick={this.goTo.bind(this,Home.direction.LEFT)}>Left</span>
-                    <span onClick={this.goTo.bind(this,Home.direction.RIGHT)}>Right</span>
+                    <span onClick={this.goTo.bind(this,Home.direction.LEFT)}>Prev</span>
+                    <span onClick={this.goTo.bind(this,Home.direction.RIGHT)}>Next</span>
                 </div>
                 <ul className="project-list" ref="projectList">
                     {projects}

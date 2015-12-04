@@ -1,3 +1,4 @@
 {
-  "home": "components/pages/home"
+  "home": "components/pages/home",
+  "project": "components/pages/project"
 }

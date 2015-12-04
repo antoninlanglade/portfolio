@@ -4,6 +4,9 @@
   .title {
     display : inline-block;
     margin: 70px 0 0 70px;
+    @include tablet() {
+    	margin: 50px 0 0 50px;
+    }
     .developer {
       color : $darkGrey;
       padding: 10px 0 0 0;

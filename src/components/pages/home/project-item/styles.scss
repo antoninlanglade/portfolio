@@ -1,5 +1,36 @@
 @import "~config/styles.scss";
 
 .component.project-item {
-
+	color : white;
+	cursor : pointer;
+	position: absolute;
+	bottom: 0;
+	font-size: 40px;
+	background-size: cover;
+	background-position: center bottom;
+	&:hover {
+		z-index : 3;
+		transform : scale(1.1,1.1);
+	}
+	&:nth-child(2n+1) {
+		height : calc(56% - 90px);
+	}
+	&:nth-child(2n+2) {
+		height : calc(70% - 90px);
+	}
+	&:nth-child(2n+3) {
+		height : calc(64% - 90px);
+	}
+	&.animationOut {
+		padding : 45px 0 45px 0;
+		width : 0;
+		opacity: 0;
+		transition : padding 0.25s, width 0.25s, opacity 0.20s, transform 0.25s;
+	}
+	&.animationIn {
+		padding : 45px 45px 45px 45px;
+		width : calc(100% / 3 - 90px);
+		opacity: 1;
+		transition : padding 0.35s, width 0.35s, opacity 0.05s, transform 0.25s;
+	}
 }

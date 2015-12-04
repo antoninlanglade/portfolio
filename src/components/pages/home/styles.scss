@@ -18,24 +18,7 @@
       height : 100%;
       position : relative;
       transition : 0.5s all;
-      .project-item {
-          cursor : pointer;
-          width : calc(100% / 3 - 90px);
-          position: absolute;
-          bottom: 0;
-          padding : 45px;
-          font-size: 40px;
-          z-index: 2;
-          &:nth-child(2n+1) {
-              height : calc(56% - 90px);
-          }
-          &:nth-child(2n+2) {
-              height : calc(70% - 90px);
-          }
-          &:nth-child(2n+3) {
-              height : calc(64% - 90px);
-          }
-      }
-  }
+      z-index: 2;
+    }
 
 }
