@@ -15,6 +15,10 @@
 		position : relative;
 		cursor: pointer;
 		padding: 5px 5px 5px 15px;
+		a {
+			color : black;
+			transition : 0.5s all;
+		}
 		&.purple {
 			&:after, &:before {
   				background: #6800ee;

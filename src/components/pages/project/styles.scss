@@ -24,6 +24,7 @@
 	margin: 0 70px 0 70px;
 	height: calc(100%);
 	overflow: scroll;
+	-webkit-scrollbar : none;
 	@include tablet() {
 		width: calc(50% - 100px);
 		margin: 0 50px 0 50px;
@@ -61,7 +62,7 @@
 		display : block;
 	}
 	.url {
-		display: block;
+		display: inline-block;
 		margin: 0 0 70px 0;
 		font-size: 40px;	
 	}

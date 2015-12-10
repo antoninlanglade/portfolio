@@ -3,7 +3,6 @@ import _ from '_';
 import {Localize, Link, i18n, i18nComponent, Asset, assets} from 'dan';
 import config from 'config';
 import './styles.scss';
-import Data from 'components/app/projectsData';
 import ProjectItem from './project-item/';
 import 'gsap';
 
@@ -13,22 +12,17 @@ var visibleRaws = 3;
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
-
-        assets.add(() => {
-            return new Promise((resolve, reject) => {
-                setTimeout(resolve, 200);
-            });
-        });
         
         this.offsetLeft = 0;
         this.index = visibleRaws - 1;
         this.dom = {};
         this.items = [];
+        this.data = i18n.localize('data', null, 'data', i18n.locale);
     }
 
     componentDidMount() {
         this.dom.projectList = React.findDOMNode(this.refs.projectList);
-        _.forEach(Data, (item, key) => {
+        _.forEach(this.data, (item, key) => {
             this.dom['projectItem'+key] = React.findDOMNode(this.refs['projectItem'+key]);
             this.items.push({
                 ref : this.refs['projectItem'+key],
@@ -36,21 +30,21 @@ export default class Home extends React.Component {
                 visible : key < 3 ? true : false
             });
         });
+        
     }
 
     componentDidAppear() {
-        console.log('appear');
         this.animateItems();
+    }
+
+    componentWillUnmount() {
+        
     }
 
     animateItems() {
         _.forEach(this.items, (item, key) => {
             key <= this.index ? item.ref.animationIn() : item.ref.animationOut();
         });
-    }
-
-    onWheel(e) {
-        // console.log(e.deltaX);
     }
 
     goTo(direction) {
@@ -98,16 +92,16 @@ export default class Home extends React.Component {
     }
 
     render() {
-        var projects = Data.map((item, key) => {
+        var projects = this.data.map((item, key) => {
             return (
                 <ProjectItem ref={"projectItem"+key} data={{item : item, key : key}} />
             );
         });
         return (
-            <div className="component home" onDrag={this.onWheel.bind(this)}>
+            <div className="component home">
                 <div className="arrows">
-                    <span onClick={this.goTo.bind(this,Home.direction.LEFT)}>Prev</span>
-                    <span onClick={this.goTo.bind(this,Home.direction.RIGHT)}>Next</span>
+                    <span onClick={this.goTo.bind(this,Home.direction.LEFT)}><Localize>prev</Localize></span>
+                    <span onClick={this.goTo.bind(this,Home.direction.RIGHT)}><Localize>next</Localize></span>
                 </div>
                 <ul className="project-list" ref="projectList">
                     {projects}

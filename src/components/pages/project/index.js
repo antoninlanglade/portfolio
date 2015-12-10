@@ -3,21 +3,28 @@ import _ from '_';
 import {Localize, Link, i18n, i18nComponent, Asset, assets} from 'dan';
 import config from 'config';
 import './styles.scss';
-import Data from 'components/app/projectsData.json';
+
 
 @i18nComponent
 export default class Description extends React.Component {
     constructor(props) {
         super(props);
-        assets.add(() => {
-            return new Promise((resolve, reject) => {
-                setTimeout(resolve, 200);
-            });
+        this.sync();  
+    }
+
+    sync() {
+        this.data = _.find(i18n.localize('data', null, 'data'), (project) => {
+            return project.route === this.props.index;
         });
     }
 
     render() {
-        var item = Data[this.props.index], context, persons, listPersons, role;
+        var item = this.data,
+            context,
+            persons,
+            listPersons,
+            role;
+
         listPersons = item.content.persons.map((item) => {
             return (
                 <Link className="person" href={item.url} target="_blank">{item.name}</Link>
@@ -25,16 +32,16 @@ export default class Description extends React.Component {
         });
 
         context = item.content.context ? <div className="context key">
-            <span className="left-column"><Localize>Context</Localize></span>
+            <span className="left-column"><Localize>context</Localize></span>
             <span className="right-column">{item.content.context}</span>
         </div> : null;
         persons = item.content.persons.length !== 0 ?<div className="with key">
-            <span className="left-column"><Localize>With</Localize></span>
+            <span className="left-column"><Localize>with</Localize></span>
             <span className="right-column">{listPersons}</span>
             
         </div> : null;
         role = item.content.role ? <div className="role key">
-            <span className="left-column"><Localize>Context</Localize></span>
+            <span className="left-column"><Localize>role</Localize></span>
             <span className="right-column">{item.content.role}</span>
         </div> : null;
 

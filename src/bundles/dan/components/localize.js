@@ -89,6 +89,7 @@ export var i18nComponent = function(target) {
     // ComponentDidMount
     target.prototype.componentDidMount = function() {
         event = () => {
+            this.sync && this.sync();
             this.forceUpdate();
         };
 

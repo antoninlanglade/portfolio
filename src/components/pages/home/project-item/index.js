@@ -10,12 +10,14 @@ export default class ProjectItem extends React.Component {
         super(props);
         this.animationState = ProjectItem.animationState.OUT;
         this.dom = {};
-        this.onScroll = this.onScroll.bind(this);
     }
 
     componentDidMount() {
         this.dom.el = React.findDOMNode(this.refs.projectItem);
-        window.addEventListener('scroll',this.onScroll);
+    }
+
+    componentWillUnmount() {
+        
     }
 
     animationIn() {
@@ -38,13 +40,10 @@ export default class ProjectItem extends React.Component {
 
     openProject(index, e) {
         e.preventDefault();
-        console.log(index);
-        router.goto(router.getRoute(this.props.data.item.route));
+        router.goto(router.getRoute('project', {projectId : this.props.data.item.route}));
     }
 
-    onScroll(e) {
 
-    }
 
     render() {
         var style = {

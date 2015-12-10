@@ -1,4 +1,11 @@
 {
 	"credits" : "Photo Credits",
-	"visit website" : "Visit website"
+	"visit website" : "Visit website",
+	"context" : "Context",
+	"with" : "With",
+	"role" : "Role",
+	"prev" : "prev",
+	"next" : "next",
+	"about" : "About",
+	"interactive-dev" : "Interactive Developer"
 }

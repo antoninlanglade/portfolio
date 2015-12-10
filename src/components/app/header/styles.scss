@@ -7,9 +7,24 @@
     @include tablet() {
     	margin: 50px 0 0 50px;
     }
+    h1 {
+      color : black;
+    }
     .developer {
       color : $darkGrey;
       padding: 10px 0 0 0;
     }  
+  }
+  .locale {
+    position: absolute;
+    top : 10px;
+    right: 10px;
+    cursor: pointer;
+    a {
+      margin : 5px;
+      &.current {
+        text-decoration: underline;
+      } 
+    }
   }
 }

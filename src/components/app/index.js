@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Localize, Link, router, Loader} from 'dan';
+import {Localize, Link, router, Loader, assets, i18n} from 'dan';
 import 'gsap';
 import './styles.scss';
 import Header from 'components/app/header';
@@ -14,11 +14,7 @@ class Page extends React.Component {
             params: {}
         };
         this.rand = parseInt(Math.random()*1000);
-        this.loader = new Loader({
-            $elContainer : '#loader'
-        });
     }
-
 
     componentDidMount() {
         this.el = ReactDOM.findDOMNode(this);
@@ -59,6 +55,15 @@ export default class App extends React.Component {
         this.state = {
             content: 'div'
         }
+        this.loader = new Loader({
+            $elContainer : '#loader'
+        });
+
+        assets.add(() => {
+            return new Promise((resolve, reject) => {
+                resolve();
+            });
+        });
     }
 
     componentDidMount() {

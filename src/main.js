@@ -48,6 +48,7 @@ setup.push(function(next) {
 	// Files
 	i18n.addFile('main');
 	i18n.addFile('routes');
+	i18n.addFile('data');
 	Localize.defaultFile = 'main';
 
 	// Locale

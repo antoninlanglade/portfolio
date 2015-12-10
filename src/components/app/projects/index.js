@@ -3,12 +3,35 @@ import _ from '_';
 import {Localize, Link, i18n, i18nComponent, Asset, assets} from 'dan';
 import config from 'config';
 import './styles.scss';
-import Data from 'components/app/projectsData.json';
 
 @i18nComponent
 export default class Projects extends React.Component {
     constructor(props) {
         super(props);
+        this.dom = [];
+        this.data = i18n.localize('data', null, 'data', i18n.locale);
+    }
+
+    componentDidMount() {
+      _.forEach(this.data,(item,key) => {
+        this.dom.push(React.findDOMNode(this.refs["project"+key]));
+      });
+      
+    }
+    onHover(key, direction) {
+      var opacity;
+      if (direction===Projects.direction.IN) {
+        _.forEach(this.dom, (item, currentKey) => {
+            if (key !== currentKey) {
+              item.style.color = "rgba(0,0,0,0.25)";  
+            }      
+        });
+      }
+      else if (direction===Projects.direction.OUT) {
+        _.forEach(this.dom, (item) => {
+            item.style.color = "rgb(0,0,0)";
+        });
+      } 
     }
 
     render() {
@@ -16,12 +39,12 @@ export default class Projects extends React.Component {
         left : [],
         right : []
       };
-      var middle = Math.round(Data.length / 2); 
-      _.forEach(Data,(item, key) => {
+      var middle = Math.round(this.data.length / 2); 
+      _.forEach(this.data,(item, key) => {
 			var column = key < middle ? projects.left : projects.right
 			column.push(
-				<div className={item.color + " project"} key={key} >
-          <Link route={item.route}>
+				<div className={item.color + " project"} key={key}>
+          <Link route="project" projectId={item.route} ref={'project'+key} onMouseOver={this.onHover.bind(this,key,Projects.direction.IN)} onMouseOut={this.onHover.bind(this,key,Projects.direction.OUT)}>
             <span className="name">{item.name}</span>
             <span className="date"> - {item.date}</span>
           </Link>
@@ -36,4 +59,8 @@ export default class Projects extends React.Component {
             </div>
         );
     }
+}
+Projects.direction = {
+  IN : 1,
+  OUT : 2
 }

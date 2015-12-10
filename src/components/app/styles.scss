@@ -25,6 +25,7 @@ body, html, #container {
 	height : 100%;
 	font-family : "Apercu";
 	user-select: none;
+	overflow-y:hidden;
 }
 a {
 	text-decoration: none;
@@ -56,7 +57,7 @@ a {
 		&:before {
 			content : "";
 			width : 100%;
-			height : 4px;
+			height : 0px;
 			left : 0;
 			bottom : 0;
 			position : absolute;
@@ -64,6 +65,25 @@ a {
 			opacity: 0;
 			transition: height 0.20s, bottom 0.20s;
 			animation-fill-mode: forwards;
+			z-index: 3;
+		}
+		&:after {
+			content : "";
+			width : 100%;
+			height : 0;
+			left : 0;
+			bottom : 0;
+			position : absolute;
+			background: black;
+			transition: height 0.20s;
+			z-index: 1;
+		}
+		span {
+			z-index: 2;
+			position : relative;
+			opacity : 0;
+			transition : opacity 0.2s;
+			transition-delay: 1.5s;
 		}
 		&.animationIn {
 			&:before {
@@ -71,28 +91,42 @@ a {
 				animation : lineIn 0.5s;
 				animation-delay : 1s;
 			}
-		}
-		&:hover:before {
-			bottom : 0;
-			height : 30%;
-			animation : lineHoverIn 0.15s;
+			&:after {
+				animation : lineHoverIn 0.01s;
+				animation-delay : 1.4s;
+				animation-fill-mode: forwards;
+			}
 			span {
-				z-index: 2;
+				opacity : 1;
 			}
 		}
-		
+		&:hover:after {
+			bottom : 0;
+			height : 40%;
+			animation : lineHover 0.15s;
+		}
 	}
 }
 
 @keyframes lineHoverIn {
 	0% {
 		bottom : 0;
+		height: 0;
+	}
+	100% {
+		bottom : 0;
+		height : 4px;
+	}
+}
+@keyframes lineHover {
+	0% {
+		bottom : 0;
 		height: 4px;
 	}
 	100% {
 		bottom : 0;
-		height : 30%;
-	}
+		height : 40%;
+	}	
 }
 @keyframes lineIn {
 	0% {

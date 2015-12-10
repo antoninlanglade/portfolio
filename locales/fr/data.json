@@ -1,0 +1,126 @@
+{
+	"data" : [
+		{
+			"name" : "Mirage",
+			"color" : "purple",
+			"date" : "2015",
+			"route" : "mirage",
+			"rgba" : "rgba(63, 142, 248, 1)",
+			"content" : {
+				"image" : "img/projects/mirage_@2x.png",
+				"context" : "School Project / Gobelins Paris",
+				"persons" : [
+					{
+						"name" : "Sylvain Reucherand",
+						"url" : ""
+					},
+					{
+						"name" : "Julie Muckensturm",
+						"url" : ""
+					},
+					{
+						"name" : "Laure Marchadier",
+						"url" : ""
+					}
+				],
+				"role" : "Concept Créatif, Développement Interactif, Superviseur sonore, Acteur",
+				"description" : "Mirage est un court film interactif. C'est mon projet de fin d'études dans la section Design Interactif à Gobelins Paris. ",
+				"url" : "http://lab.antoninlanglade.com/mirage"
+			}
+		},
+		{
+			"name" : "O•P•I",
+			"color" : "orange",
+			"date" : "2015",
+			"route" : "opi",
+			"content" : {
+				"image" : "img/projects/opi_@2x.png",
+				"context" : "TBWA\\DanParis",
+				"persons" : [
+					{
+						"name" : "Emal Saifi",
+						"url" : ""
+					},
+					{
+						"name" : "Olivier Lestang",
+						"url" : ""
+					},
+					{
+						"name" : "Sidney Bourgalle",
+						"url" : ""
+					}
+				],
+				"role" : "Développeur iOS",
+				"awards" : "",
+				"url" : "http://lab.antoninlanglade.com/mirage"
+			}
+		},
+		{
+			"name" : "Coated",
+			"color" : "yellow",
+			"date" : "2014",
+			"route" : "coated",
+			"content" : {
+				"image" : "img/projects/coated_@2x.png",
+				"context" : "",
+				"persons" : [
+					{
+						"name" : "Maxime Rimbert",
+						"url" : ""
+					},
+					{
+						"name" : "Nicolas Vittori",
+						"url" : ""
+					},
+					{
+						"name" : "Tohme Athanasios",
+						"url" : ""
+					},
+					{
+						"name" : "Jean-Baptiste Penrath",
+						"url" : ""
+					}
+				],
+				"role" : "Développeur iOS",
+				"awards" : ""
+			}
+		},
+		{
+			"name" : "Air France Expo",
+			"color" : "blue",
+			"date" : "2014",
+			"route" : "airfrance",
+			"content" : {
+				"image" : "img/projects/airfrance_@2x.png",
+				"context" : "TBWA\\DanParis",
+				"persons" : [
+					{
+						"name" : "Emal Saifi",
+						"url" : ""
+					}
+				],
+				"role" : "Développeur iOS",
+				"awards" : "",
+				"url" : "lab.antoninlanglade.com/mirage"
+			}
+		},
+		{
+			"name" : "Défi Ingénieurs 2",
+			"color" : "green",
+			"date" : "2014",
+			"route" : "defi",
+			"content" : {
+				"image" : "img/projects/sncf_@2x.png",
+				"context" : "TBWA\\DanParis",
+				"persons" : [
+					{
+						"name" : "Emal Saifi",
+						"url" : ""
+					}
+				],
+				"role" : "Développeur Front-End",
+				"awards" : ""
+			}
+		}	
+	]
+}
