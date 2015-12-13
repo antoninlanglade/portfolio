@@ -116,9 +116,9 @@ export class Router extends EventEmitter {
                             if (route !== "guid") {
                                 // Add / Refresh
                                 route = i18n.localize(route, null, this.file, locale);
-                                logger.log('router', 'Add', route);
+                                
                                 route = (this.path + route).replace(/\/\//, '/');
-
+                                logger.log('router', 'Add', route);
                                 page(route, (ctx) => {
                                     async.each(this.middleware, function (middleware, callback) {
                                         middleware(ctx, callback);

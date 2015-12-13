@@ -24,7 +24,6 @@ setup.push(function(next) {
 
 // Setup logger
 setup.push(function(next) {
-	logger.enable = config.env === 'dev';
 	logger.show('*');
 	next();
 });

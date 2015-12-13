@@ -43,19 +43,29 @@ export default class ProjectItem extends React.Component {
         router.goto(router.getRoute('project', {projectId : this.props.data.item.route}));
     }
 
+    overIn() {
+        this.props.moveToBackground && this.props.moveToBackground();
+        this.dom.el.style.zIndex = 3;
+    }
 
+    overOut() {
+        this.dom.el.style.zIndex = 2;
+    }
 
     render() {
         var style = {
             right : 100/3*2 - (this.props.data.key * (100/3))+"%",
-            background : this.props.data.item.color
+            backgroundImage : 'url('+(config.path+this.props.data.item.content.image)+')',
+            backgroundRepeat : 'none',
+            backgroundSize : 'cover',
+            backgroundPosition : 'center top',
+            backgroundColor : this.props.data.item.color
         };
         return (
-            <li className="component project-item animationOut" ref="projectItem" onClick={this.openProject.bind(this,this.props.data.key)} style={style}>
-                {this.props.data.item.name}
+            <li className="component project-item animationOut" ref="projectItem" onMouseOver={this.overIn.bind(this)} onMouseLeave={this.overOut.bind(this)} onClick={this.openProject.bind(this,this.props.data.key)} style={style}>
+                <span className="title">{this.props.data.item.name}</span>
             </li>
-        );
-        
+        ); 
     }
 }
 

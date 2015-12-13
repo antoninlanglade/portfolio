@@ -1,4 +1,5 @@
 {
   "home": "components/pages/home",
-  "project": "components/pages/project"
+  "project": "components/pages/project",
+  "about": "components/pages/about"
 }

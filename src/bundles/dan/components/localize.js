@@ -94,7 +94,7 @@ export var i18nComponent = function(target) {
         };
 
         i18n.on('change', event);
-
+        
         componentDidMount && componentDidMount.call(this);
     };
 

@@ -17,6 +17,10 @@ export default class Home extends React.Component {
         this.index = visibleRaws - 1;
         this.dom = {};
         this.items = [];
+        this.sync();
+    }
+
+    sync() {
         this.data = i18n.localize('data', null, 'data', i18n.locale);
     }
 
@@ -30,7 +34,6 @@ export default class Home extends React.Component {
                 visible : key < 3 ? true : false
             });
         });
-        
     }
 
     componentDidAppear() {
@@ -91,10 +94,16 @@ export default class Home extends React.Component {
         return isItemAtPosition;
     }
 
+    moveToBackground() {
+        _.forEach(this.items, (item, key) => {
+            item.dom.style.zIndex = 1;
+        }); 
+    }
+
     render() {
         var projects = this.data.map((item, key) => {
             return (
-                <ProjectItem ref={"projectItem"+key} data={{item : item, key : key}} />
+                <ProjectItem ref={"projectItem"+key} data={{item : item, key : key}} moveToBackground={this.moveToBackground.bind(this)}/>
             );
         });
         return (

@@ -7,5 +7,14 @@
 	"prev" : "précédent",
 	"next" : "suivant",
 	"about" : "À propos",
-	"interactive-dev" : "Développeur Interactif"
+	"interactive-dev" : "Développeur Interactif",
+	"about-me" : "À propos",
+	"short-description" : "Salut! Mon nom est Antonin Langlade. <br>J'ai 23 ans et je suis développeur chez DanParis, TBWA",
+	"long-description" : "I use to develop with JS (Frameworks with Backbone, Require.js, Grunt, Sass, etc) and Objective C (currently in Swift learning). First of all I am a designer before a developer. At Gobelins, we learn to build a project : starting with the idea and going until the end of the digital production. This is what we call the design process and that’s why I’m a designer.",
+	"twitter" : "Twitter",
+	"twitter-me" : "@antoninlanglade",
+	"email" : "Mail",
+	"email-me" : "antonin.langlade@gmail.com",
+	"phone" : "Téléphone",
+	"phone-me" : "0630365943"
 }

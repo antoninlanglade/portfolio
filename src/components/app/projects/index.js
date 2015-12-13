@@ -7,9 +7,13 @@ import './styles.scss';
 @i18nComponent
 export default class Projects extends React.Component {
     constructor(props) {
-        super(props);
-        this.dom = [];
-        this.data = i18n.localize('data', null, 'data', i18n.locale);
+      super(props);
+      this.dom = [];
+      this.sync();
+    }
+
+    sync() {
+      this.data = i18n.localize('data', null, 'data', i18n.locale);
     }
 
     componentDidMount() {
@@ -35,27 +39,27 @@ export default class Projects extends React.Component {
     }
 
     render() {
-    	var projects = {
+      var projects = {
         left : [],
         right : []
       };
       var middle = Math.round(this.data.length / 2); 
       _.forEach(this.data,(item, key) => {
-			var column = key < middle ? projects.left : projects.right
-			column.push(
-				<div className={item.color + " project"} key={key}>
-          <Link route="project" projectId={item.route} ref={'project'+key} onMouseOver={this.onHover.bind(this,key,Projects.direction.IN)} onMouseOut={this.onHover.bind(this,key,Projects.direction.OUT)}>
-            <span className="name">{item.name}</span>
-            <span className="date"> - {item.date}</span>
-          </Link>
-				</div>
-			);
+        var column = key < middle ? projects.left : projects.right
+        column.push(
+          <div className={item.color + " project"} key={key} onMouseOver={this.onHover.bind(this,key,Projects.direction.IN)} onMouseOut={this.onHover.bind(this,key,Projects.direction.OUT)}>
+            <Link route="project" projectId={item.route} ref={'project'+key}>
+              <span className="name">{item.name}</span>
+              <span className="date"> - {item.date}</span>
+            </Link>
+          </div>
+        );
       });
       
         return (
             <div className="component projects">
-      			<div className="left">{projects.left}</div>
-              	<div className="right">{projects.right}</div>          
+            <div className="left">{projects.left}</div>
+                <div className="right">{projects.right}</div>          
             </div>
         );
     }
