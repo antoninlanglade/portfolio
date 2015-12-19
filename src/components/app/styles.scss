@@ -35,7 +35,7 @@ a {
 .component.app {
 	font-family : "Apercu";
 	position : relative;
-	width : 100%;
+	width : 0%;
 	height: 100%;
 	background : #f2f2f2;
 	overflow: hidden;
@@ -43,7 +43,7 @@ a {
 		position : absolute;
 		bottom : 0;
 		right: 0;
-		width : 80%;
+		width : 0%;
 		height : 70%;
 		background : white;
 	}
@@ -64,6 +64,7 @@ a {
 			background: black;
 			opacity: 0;
 			transition: height 0.20s, bottom 0.20s;
+			animation-delay : 1s;
 			animation-fill-mode: forwards;
 			z-index: 3;
 		}
@@ -82,52 +83,30 @@ a {
 			z-index: 2;
 			position : relative;
 			opacity : 0;
-			transition : opacity 0.2s;
-			transition-delay: 1.5s;
+			transition : opacity 0.1s;
+			transition-delay: 1.2s;
 		}
 		&.animationIn {
 			&:before {
 				opacity: 1;
 				animation : lineIn 0.5s;
 				animation-delay : 1s;
-			}
-			&:after {
-				animation : lineHoverIn 0.01s;
-				animation-delay : 1.4s;
 				animation-fill-mode: forwards;
 			}
+			
 			span {
 				opacity : 1;
 			}
 		}
-		&:hover:after {
-			bottom : 0;
-			height : 40%;
-			animation : lineHover 0.15s;
+		&:hover {
+			&:after {
+				bottom : 0;
+				height : 40%;	
+			}
 		}
 	}
 }
 
-@keyframes lineHoverIn {
-	0% {
-		bottom : 0;
-		height: 0;
-	}
-	100% {
-		bottom : 0;
-		height : 4px;
-	}
-}
-@keyframes lineHover {
-	0% {
-		bottom : 0;
-		height: 4px;
-	}
-	100% {
-		bottom : 0;
-		height : 40%;
-	}	
-}
 @keyframes lineIn {
 	0% {
 		bottom : 100%;

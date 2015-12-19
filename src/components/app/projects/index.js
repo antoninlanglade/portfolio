@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import _ from '_';
-import {Localize, Link, i18n, i18nComponent, Asset, assets} from 'dan';
+import {Localize, Link, i18n, i18nComponent, Asset, assets, router} from 'dan';
 import config from 'config';
 import './styles.scss';
 
@@ -9,6 +10,7 @@ export default class Projects extends React.Component {
     constructor(props) {
       super(props);
       this.dom = [];
+      this.data = {};
       this.sync();
     }
 
@@ -18,7 +20,7 @@ export default class Projects extends React.Component {
 
     componentDidMount() {
       _.forEach(this.data,(item,key) => {
-        this.dom.push(React.findDOMNode(this.refs["project"+key]));
+        this.dom.push(ReactDOM.findDOMNode(this.refs["project"+key]));
       });
       
     }
@@ -38,6 +40,15 @@ export default class Projects extends React.Component {
       } 
     }
 
+    goToProject(route, e) {
+      e.preventDefault();
+      if (router.ctx.params.projectId !== route) {
+        router.goto(router.getRoute('project',{
+          projectId : route
+        }));  
+      }
+    }
+
     render() {
       var projects = {
         left : [],
@@ -48,7 +59,7 @@ export default class Projects extends React.Component {
         var column = key < middle ? projects.left : projects.right
         column.push(
           <div className={item.color + " project"} key={key} onMouseOver={this.onHover.bind(this,key,Projects.direction.IN)} onMouseOut={this.onHover.bind(this,key,Projects.direction.OUT)}>
-            <Link route="project" projectId={item.route} ref={'project'+key}>
+            <Link onClick={this.goToProject.bind(this, item.route)} ref={'project'+key}>
               <span className="name">{item.name}</span>
               <span className="date"> - {item.date}</span>
             </Link>

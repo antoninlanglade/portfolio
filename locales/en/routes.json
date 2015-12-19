@@ -1,5 +1,5 @@
 {
   "home": "/",
-  "project" : "/:projectId",
-  "about" : "/about"
+  "project" : "/en/:projectId",
+  "about" : "/en/about"
 }

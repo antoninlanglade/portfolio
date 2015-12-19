@@ -28,13 +28,16 @@
 	&.animationOut {
 		padding : 45px 0 45px 0;
 		width : 0;
-		opacity: 0;
-		transition : padding 0.25s, width 0.25s, opacity 0.20s, transform 0.25s;
+		transition : padding 0.35s, width 0.35s, opacity 0.20s, transform 0.25s;
+		.title {
+			opacity : 0;
+			transition-delay : 0;
+			transition : opacity 0.20s
+		}
 	}
 	&.animationIn {
 		padding : 45px 45px 45px 45px;
 		width : calc(100% / 3 - 90px);
-		opacity: 1;
 		transition : padding 0.35s, width 0.35s, opacity 0.05s, transform 0.25s;
 		.title {
 			opacity : 1;

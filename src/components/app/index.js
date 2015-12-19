@@ -55,19 +55,13 @@ export default class App extends React.Component {
         this.state = {
             content: 'div'
         }
-        this.loader = new Loader({
-            $elContainer : '#loader'
-        });
-
-        assets.add(() => {
-            return new Promise((resolve, reject) => {
-                resolve();
-            });
-        });
+        this.firstLoad = true;
+        this.DOM = {};
     }
 
     componentDidMount() {
         this.el = ReactDOM.findDOMNode(this);
+        this.DOM.pages = ReactDOM.findDOMNode(this.refs.pages);
         this.currentIndex = 0;
         this.pages = [
             this.refs.p0,
@@ -102,26 +96,46 @@ export default class App extends React.Component {
         next.setContent(view, params);
 
         // Animation
-        next.el.style.opacity = 0;
         TweenMax.killTweensOf([
             current.el,
             next.el
         ]);
-        TweenMax.to(current.el, .25, {
-            opacity: 0,
-            onComplete: () => {
-                current.setContent('div', params);
-                current.el.style.display = 'none';
-                next.el.style.display = '';
-                TweenMax.to(next.el, .25, {
-                    opacity: 1,
-                    onComplete : () => {
-                        next.component.componentDidAppear && next.component.componentDidAppear();
-                    }
-                });
-            }
-        });
-
+        
+        current.component.componentWillUnAppear && current.component.componentWillUnAppear();
+        
+        if (this.firstLoad) {
+            this.firstLoad = false;
+            current.setContent('div', params);
+            current.el.style.display = 'none';
+            this.refs.header.componentDidAppear();
+            TweenMax.to(this.el,1, {
+                width : "100%",
+                onComplete : () => {
+                    TweenMax.to(this.DOM.pages, .5, {
+                        width : "80%",
+                        onComplete : () => {
+                            next.component.componentDidAppear && next.component.componentDidAppear();
+                            this.refs.footer.componentDidAppear();
+                        }
+                    });
+                }
+            });
+        }
+        else {
+            TweenMax.to(current.el, .35, {
+                onComplete: () => {
+                    current.setContent('div', params);
+                    current.el.style.display = 'none';
+                    next.el.style.display = '';
+                    TweenMax.to(next.el, .25, {
+                        onComplete : () => {
+                            next.component.componentDidAppear && next.component.componentDidAppear();
+                        }
+                    });
+                }
+            });
+        }
+        
         // Swap
         this.currentIndex = (this.currentIndex + 1) % this.pages.length;
         
@@ -135,12 +149,12 @@ export default class App extends React.Component {
         this.pages = [];
         return (
             <div className="component app">
-                <Header />
-                <div className="pages">
+                <Header ref="header"/>
+                <div className="pages" ref="pages">
                     <Page ref="p0" />
                     <Page ref="p1" />
                 </div>
-                <Footer />
+                <Footer ref="footer"/>
             </div>
         );
     }

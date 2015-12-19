@@ -3,8 +3,10 @@ import _ from '_';
 import {Localize, Link, i18n, i18nComponent, Asset, assets} from 'dan';
 import config from 'config';
 import './styles.scss';
+import {AnimationComponent} from 'tools/animation';
 
 @i18nComponent
+@AnimationComponent
 export default class Footer extends React.Component {
     constructor(props) {
         super(props);

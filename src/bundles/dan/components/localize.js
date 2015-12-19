@@ -88,20 +88,17 @@ export var i18nComponent = function(target) {
 
     // ComponentDidMount
     target.prototype.componentDidMount = function() {
-        event = () => {
-            this.sync && this.sync();
-            this.forceUpdate();
+        var self = this;
+        event = function() {
+            self.sync && self.sync();
         };
-
-        i18n.on('change', event);
-        
         componentDidMount && componentDidMount.call(this);
+        i18n.on('change', event);
     };
 
     // ComponentWillUnmount
     target.prototype.componentWillUnmount = function() {
         i18n.off('change', event);
-
         componentWillUnmount && componentWillUnmount.call(this);
     };
 };

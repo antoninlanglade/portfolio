@@ -2,12 +2,13 @@
 	"data" : [
 		{
 			"name" : "Mirage",
-			"color" : "purple",
+			"color" : "Purple",
 			"date" : "2015",
 			"route" : "mirage",
-			"rgba" : "rgba(63, 142, 248, 1)",
+			"lightColor" : "rgba(108, 72, 243, 1)",
+			"blackColor" : "rgba(75, 47, 165, 1)",
 			"content" : {
-				"image" : "img/projects/mirage_@2x.png",
+				"images" : ["img/projects/mirage_@2x.png","img/projects/opi_@2x.png"],
 				"context" : "School Project / Gobelins Paris",
 				"persons" : [
 					{
@@ -30,11 +31,13 @@
 		},
 		{
 			"name" : "O•P•I",
-			"color" : "orange",
+			"color" : "Orange",
 			"date" : "2015",
 			"route" : "opi",
+			"lightColor" : "rgba(235, 91, 87, 1)",
+			"blackColor" : "rgba(206, 75, 67, 1)",
 			"content" : {
-				"image" : "img/projects/opi_@2x.png",
+				"images" : ["img/projects/opi_@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{
@@ -57,11 +60,13 @@
 		},
 		{
 			"name" : "Coated",
-			"color" : "yellow",
+			"color" : "Yellow",
 			"date" : "2014",
 			"route" : "coated",
+			"lightColor" : "rgba(244, 175, 59, 1)",
+			"blackColor" : "rgba(206, 140, 47, 1)",
 			"content" : {
-				"image" : "img/projects/coated_@2x.png",
+				"images" : ["img/projects/coated_@2x.png"],
 				"context" : "",
 				"persons" : [
 					{
@@ -87,11 +92,13 @@
 		},
 		{
 			"name" : "Air France Expo",
-			"color" : "blue",
+			"color" : "Blue",
 			"date" : "2014",
 			"route" : "airfrance",
+			"lightColor" : "rgba(64, 142, 248, 1)",
+			"blackColor" : "rgba(51, 108, 195, 1)",
 			"content" : {
-				"image" : "img/projects/airfrance_@2x.png",
+				"images" : ["img/projects/airfrance_@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{
@@ -106,11 +113,13 @@
 		},
 		{
 			"name" : "Défi Ingénieurs 2",
-			"color" : "green",
+			"color" : "Green",
 			"date" : "2014",
 			"route" : "defi",
+			"lightColor" : "rgba(102, 216, 164, 1)",
+			"blackColor" : "rgba(77, 165, 127, 1)",
 			"content" : {
-				"image" : "img/projects/sncf_@2x.png",
+				"images" : ["img/projects/sncf_@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{

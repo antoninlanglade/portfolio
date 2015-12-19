@@ -56,11 +56,16 @@ export class Link extends React.Component {
      * @param e
      */
     onClick(e) {
-        if(this.props.onClick && this.props.onClick(e) === false) {
+        e.preventDefault();
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
+        else {
+            if(this.props.onClick && this.props.onClick(e) === false) {
             return false;
         }
-        e.preventDefault();
-        this.router.goto(e.currentTarget, this.props.target);
+            this.router.goto(e.currentTarget, this.props.target);    
+        }
     }
 
     render() {

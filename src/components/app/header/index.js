@@ -4,9 +4,11 @@ import {Localize, Link, i18n, i18nComponent, routerComponent, Asset, assets, rou
 import config from 'config';
 import './styles.scss';
 import Projects from 'components/app/projects';
+import {AnimationComponent} from 'tools/animation';
 
 @i18nComponent
 @routerComponent
+@AnimationComponent
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -18,22 +20,14 @@ export default class Header extends React.Component {
         i18n.locale = locale;
     }
 
-    goToHome(e) {
-        console.log(e);
-        e.preventDefault();
-        if (router.route !== 'home') {
-            // router.goto(router.getRoute('home'));
-        }
-    }
-
     render() {
         
         var params = router.ctx && router.ctx.params?router.ctx.params:{};
         return (
             <div className="component header">
                 <div className="title">
-                    <Link onClick={this.goToHome.bind(this)}><h1>Antonin Langlade</h1></Link>
-                    <Link onClick={this.goToHome.bind(this)}><div className="developer"><Localize>interactive-dev</Localize></div></Link>
+                    <Link route="home"><h1>Antonin Langlade</h1></Link>
+                    <Link route="home"><div className="developer"><Localize>interactive-dev</Localize></div></Link>
                 </div>
                 <Projects /> 
                 <div className="locale">

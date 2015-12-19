@@ -8,6 +8,7 @@ src/bundles/dan/modules/modules.js
 
 # Deploy
 ./deploy.config.json
+deploy.config.json
 backup
 
 # Other

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import _ from '_';
 import {Localize, Link, i18n, i18nComponent, Asset, assets, router} from 'dan';
 import config from 'config';
@@ -13,7 +14,7 @@ export default class ProjectItem extends React.Component {
     }
 
     componentDidMount() {
-        this.dom.el = React.findDOMNode(this.refs.projectItem);
+        this.dom.el = ReactDOM.findDOMNode(this.refs.projectItem);
     }
 
     componentWillUnmount() {
@@ -40,7 +41,9 @@ export default class ProjectItem extends React.Component {
 
     openProject(index, e) {
         e.preventDefault();
-        router.goto(router.getRoute('project', {projectId : this.props.data.item.route}));
+        this.props.animationOut && this.props.animationOut(() => {
+            router.goto(router.getRoute('project', {projectId : this.props.data.item.route}));
+        });
     }
 
     overIn() {
@@ -55,12 +58,13 @@ export default class ProjectItem extends React.Component {
     render() {
         var style = {
             right : 100/3*2 - (this.props.data.key * (100/3))+"%",
-            backgroundImage : 'url('+(config.path+this.props.data.item.content.image)+')',
+            backgroundImage : 'url('+(config.path+this.props.data.item.content.images[0])+')',
             backgroundRepeat : 'none',
             backgroundSize : 'cover',
             backgroundPosition : 'center top',
-            backgroundColor : this.props.data.item.color
+            backgroundColor : this.props.data.item.lightColor
         };
+
         return (
             <li className="component project-item animationOut" ref="projectItem" onMouseOver={this.overIn.bind(this)} onMouseLeave={this.overOut.bind(this)} onClick={this.openProject.bind(this,this.props.data.key)} style={style}>
                 <span className="title">{this.props.data.item.name}</span>

@@ -3,13 +3,28 @@
 .component.home {
     width : 100%;
     height : 100%;
+    &.animationIn {
+      .arrows {
+        opacity: 1;  
+      }
+    }
     .arrows {
+      opacity: 0;
       position : absolute;
       right: 20px;
       top : -30px;
       cursor: pointer;
+      transition : 0.5s;
       span {
-        margin : 0 10px;
+        &:nth-child(1) img{
+          transform : rotate(180deg);
+        }
+      }
+      img {
+        padding : 0 10px;
+        display: inline-block;
+        vertical-align: middle;
+        width : 10px;
       }
     }
     .project-list {
