@@ -7,6 +7,7 @@ import './styles.scss';
 import ProjectItem from './project-item/';
 import {AnimationComponent} from 'tools/animation';
 import 'gsap';
+import rebound from 'rebound';
 
 var visibleRaws = 3;
 
@@ -22,6 +23,7 @@ export default class Home extends React.Component {
         this.data = {};
         this.items = [];
         this.sync();
+        
     }
 
     sync() {
@@ -30,6 +32,7 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         this.dom.projectList = ReactDOM.findDOMNode(this.refs.projectList);
+        this.dom.el = ReactDOM.findDOMNode(this);
         _.forEach(this.data, (item, key) => {
             this.dom['projectItem'+key] = ReactDOM.findDOMNode(this.refs['projectItem'+key]);
             this.items.push({
@@ -38,6 +41,7 @@ export default class Home extends React.Component {
                 visible : key < 3 ? true : false
             });
         });
+        this.dom.el.addEventListener("scroll", this.testScroll);
     }
 
     componentDidAppear() {
@@ -49,13 +53,17 @@ export default class Home extends React.Component {
     }
 
     componentWillUnmount() {
-        
+      // window.addEventListener('scroll', this.scroll);
     }
 
     animateItems() {
         _.forEach(this.items, (item, key) => {
             key <= this.index ? item.ref.animationIn() : item.ref.animationOut();
         });
+    }
+
+    testScroll(e) {
+      console.log('test',e);
     }
 
     goTo(direction) {
@@ -86,7 +94,7 @@ export default class Home extends React.Component {
         }
         this.animateItems();
 
-        this.dom.projectList.style.transform = "translate3d("+(-this.offsetLeft*100/3)+"%, 0, 0)"
+        this.dom.projectList.style.transform = "translate3d("+(-this.offsetLeft*100/3)+"%, 0, 0)";
         
     }
     isItemWithDirection(index, direction) {

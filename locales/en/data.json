@@ -2,7 +2,7 @@
 	"data" : [
 		{
 			"name" : "Mirage",
-			"color" : "Purple",
+			"color" : "purple",
 			"date" : "2015",
 			"route" : "mirage",
 			"lightColor" : "rgba(108, 72, 243, 1)",
@@ -31,7 +31,7 @@
 		},
 		{
 			"name" : "O•P•I",
-			"color" : "Orange",
+			"color" : "orange",
 			"date" : "2015",
 			"route" : "opi",
 			"lightColor" : "rgba(235, 91, 87, 1)",
@@ -60,7 +60,7 @@
 		},
 		{
 			"name" : "Coated",
-			"color" : "Yellow",
+			"color" : "yellow",
 			"date" : "2014",
 			"route" : "coated",
 			"lightColor" : "rgba(244, 175, 59, 1)",
@@ -92,7 +92,7 @@
 		},
 		{
 			"name" : "Air France Expo",
-			"color" : "Blue",
+			"color" : "blue",
 			"date" : "2014",
 			"route" : "airfrance",
 			"lightColor" : "rgba(64, 142, 248, 1)",
@@ -113,7 +113,7 @@
 		},
 		{
 			"name" : "Défi Ingénieurs 2",
-			"color" : "Green",
+			"color" : "green",
 			"date" : "2014",
 			"route" : "defi",
 			"lightColor" : "rgba(102, 216, 164, 1)",
