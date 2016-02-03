@@ -1,161 +1,92 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Localize, Link, router, Loader, assets, i18n} from 'dan';
-import 'gsap';
-import './styles.scss';
-import Header from 'components/app/header';
-import Footer from 'components/app/footer';
+import {Localize, Link, router, Loader, assets, i18n, ensure} from 'dan';
+import Config from 'config';
+import Signal from 'signals';
 
-class Page extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            content: 'div',
-            params: {}
-        };
-        this.rand = parseInt(Math.random()*1000);
-    }
+var TYPE = {
+    DESKTOP: 'desktopApp',
+    MOBILE: 'mobileApp'
+};
 
-    componentDidMount() {
-        this.el = ReactDOM.findDOMNode(this);
-    }
-
-    componentWillUnmout() {
-        this.el = null;
-    }
-
-    setContent(view, params) {
-        params = params || {};
-        this.setState({
-            content: view,
-            params: params
-        });
-    }
-
-    get content() {
-        return this.state.content;
-    }
-
-    get component() {
-        return this.refs.component;
-    }
-
-    render() {
-        return (
-            <div className="page">
-                <this.state.content {...this.state.params} ref="component"/>
-            </div>
-        );
-    }
-}
+var components = {};
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: 'div'
-        }
-        this.firstLoad = true;
-        this.DOM = {};
+            media: '',
+            mediaComponent: 'div'
+        };
+        this.route = null;
+        this.params = null;
+        this.updateSignal = new Signal();
+        this.matchMedia = window.matchMedia("screen and (max-width:"+Config.mobileWidth+"px)");
     }
 
     componentDidMount() {
         this.el = ReactDOM.findDOMNode(this);
-        this.DOM.pages = ReactDOM.findDOMNode(this.refs.pages);
-        this.currentIndex = 0;
-        this.pages = [
-            this.refs.p0,
-            this.refs.p1
-        ]
+        window.addEventListener('resize', this.onResize.bind(this));
+        this.onResize();
     }
 
     componentWillUnmount() {
         this.el = null;
-        this.current = null;
-        this.next = null;
-    }
-
-    get currentPage() {
-        return this.pages[this.currentIndex];
-    }
-
-    get nextPage() {
-        return this.pages[(this.currentIndex + 1) % this.pages.length];
     }
 
     /**
-     * Set content page
-     * @param {React.Component} view
-     * @param {Object} [params] URL Parameters
+     * Resize handler
      */
-    setPage(view, params) {
-        var current = this.currentPage,
-            next = this.nextPage;
+    onResize() {
+        var isMobile = this.matchMedia.matches,
+            media = isMobile?TYPE.MOBILE:TYPE.DESKTOP;
 
-        // New content
-        next.setContent(view, params);
-
-        // Animation
-        TweenMax.killTweensOf([
-            current.el,
-            next.el
-        ]);
-        
-        current.component.componentWillUnAppear && current.component.componentWillUnAppear();
-        
-        if (this.firstLoad) {
-            this.firstLoad = false;
-            current.setContent('div', params);
-            current.el.style.display = 'none';
-            this.refs.header.componentDidAppear();
-            TweenMax.to(this.el,1, {
-                width : "100%",
-                onComplete : () => {
-                    TweenMax.to(this.DOM.pages, .5, {
-                        width : "80%",
-                        onComplete : () => {
-                            next.component.componentDidAppear && next.component.componentDidAppear();
-                            this.refs.footer.componentDidAppear();
-                        }
-                    });
+        var swap = () => {
+            this.setState({
+                media: media,
+                mediaComponent: components[media]
+            }, () => {
+                this.app.firstLoad = true;
+                if(this.app.goto && this.route) {
+                    this.goto(this.route, this.params);
                 }
             });
+        };
+
+        if(this.state.media !== media) {
+            if(components[media]) {
+                swap();
+            }
+            else {
+                ensure(media).then((Component) => {
+                    components[media] = Component;
+                    swap();
+                });
+            }
         }
-        else {
-            TweenMax.to(current.el, .35, {
-                onComplete: () => {
-                    current.setContent('div', params);
-                    current.el.style.display = 'none';
-                    next.el.style.display = '';
-                    TweenMax.to(next.el, .25, {
-                        onComplete : () => {
-                            next.component.componentDidAppear && next.component.componentDidAppear();
-                        }
-                    });
-                }
-            });
-        }
-        
-        // Swap
-        this.currentIndex = (this.currentIndex + 1) % this.pages.length;
-        
+    }
+
+    goto(route, params) {
+        this.route = route;
+        this.params = params;        
+        this.app.goto && this.app.goto.apply(this.app, arguments);
+    }
+
+    componentDidUpdate() {
+        this.updateSignal.dispatch();
     }
 
     shouldComponentUpdate(props, state) {
-        return false;
+        var update = this.state.media !== state.media;
+        update && logger.log('app', state.media === TYPE.MOBILE?'Mobile':'Desktop');
+        return update;
     }
 
+
+
     render() {
-        this.pages = [];
         return (
-            <div className="component app">
-                <Header ref="header"/>
-                <div className="pages" ref="pages">
-                    <Page ref="p0" />
-                    <Page ref="p1" />
-                </div>
-                <Footer ref="footer"/>
-            </div>
+            <this.state.mediaComponent ref={(el) => { this.app = el; }}/>
         );
     }
 }

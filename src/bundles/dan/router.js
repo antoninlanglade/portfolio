@@ -145,6 +145,7 @@ export class Router extends EventEmitter {
      * @param {String} [target] (default: _self)
      */
     goto(href, target) {
+
         href = _.isString(href) ? href : $(href).attr('href');
         target = _.isString(target || TARGET.SELF) ? target || TARGET.SELF : $(target).attr('target');
 

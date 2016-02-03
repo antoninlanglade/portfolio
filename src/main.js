@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 import _ from '_';
 import {i18n, Localize, logger, Is} from 'dan';
 
-import App from './components/app';
+import App from 'components/app';
+
 import router from './router';
 
 var setup = [];
@@ -65,8 +66,17 @@ setup.push(function(next) {
 
 // Setup app
 setup.push(function(next) {
-	router.app = ReactDOM.render(<App></App>, document.getElementById('container'));
-	next();
+	var app;
+	app = ReactDOM.render(<App></App>, document.getElementById('container'));
+
+	var listen = () => {
+		if (app.app !== void(0)) {
+			router.app = app;
+			app.updateSignal.remove(listen);
+			next();
+		}
+	};
+	app.updateSignal.add(listen);
 });
 
 // Launch app

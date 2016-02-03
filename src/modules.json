@@ -1,5 +1,10 @@
 {
-  "home": "components/pages/home",
-  "project": "components/pages/project",
-  "about": "components/pages/about"
+	"desktopApp": "components/desktop",
+	"homeDesktop": "components/desktop/pages/home",
+	"projectDesktop": "components/desktop/pages/project",
+	"aboutDesktop": "components/desktop/pages/about",
+	"mobileApp": "components/mobile",
+	"homeMobile": "components/mobile/pages/home",
+	"projectMobile": "components/mobile/pages/project",
+	"aboutMobile": "components/mobile/pages/about"
 }

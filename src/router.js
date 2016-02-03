@@ -1,23 +1,16 @@
 import {router, ensure, i18n} from 'dan';
 import _ from '_';
-router.add('home', 'home');
-router.add('about', 'about');
 
-var data = i18n.localize('data', null, 'data', i18n.locale);	
-var projects = {};
-_.forEach(data, (item, key) => {
-	projects[item.route] = key;
+router.add('home', function(scope) {
+	router.app.goto('home', scope.params);
+});
+
+router.add('about', function(scope) {
+	router.app.goto('about', scope.params);
 });
 
 router.add('project', function(scope) {
-	ensure('project').then(function(Component) {
-		router.app.setPage(Component, {
-			index: scope.params.projectId
-		});
-	});
+	router.app.goto('project', scope.params);
 });
-
-// i18n.on('change', i18nChange);
-// i18nChange();
 
 export default router;

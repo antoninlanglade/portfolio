@@ -1,0 +1,87 @@
+@import "~config/styles.scss";
+
+.component.projects {
+	display : inline-block;
+	vertical-align: top;
+	.left, .right {
+		vertical-align: top;
+		display : inline-block;
+		margin: 70px 0 0 0;
+		opacity : 0;
+		@include tablet() {
+			margin: 50px 0 0 0px;
+		}
+	}
+	.left {
+      transition : margin-left 0.5s, opacity 0.5s;  
+      transition-delay : 0.50s;
+    }
+    .right {
+      transition : margin-left 0.5s, opacity 0.5s;  
+      transition-delay : 0.75s;
+    }
+	.project {
+		position : relative;
+		padding: 5px 5px 5px 15px;
+		a {
+			cursor: pointer;
+			color : black;
+			transition : 0.5s all;
+		}
+		&.purple {
+			&:after, &:before {
+  				background: #6800ee;
+  			}
+	  	}
+	  	&.green {
+	  		&:after, &:before {
+	  			background: #46d6a5;
+	  		}
+	  	}
+	  	&.blue {
+	  		&:after, &:before {
+	  			background: #4492ff;
+	  		}
+	  	}
+	  	&.yellow {
+	  		&:after, &:before {
+	  			background: #ffaf3f;
+	  		}
+	  	}
+	  	&.orange {
+	  		&:after, &:before {
+	  			background: #ff605d;
+	  		}
+	  	}
+	  	&:after, &:before {
+	  		content : "";
+	  		position : absolute;
+	  		top : calc(50% - 1px);
+	  		left : -5px;
+	  		width: 10px;
+	  		height : 2px;
+	  		background : black;
+	  		
+	  	}
+	  	&:after {
+	  		transform : rotate(90deg);
+	  		transition : all 0.25s;
+	  	}
+	  	&:before {
+	  		transition : all 0.25s;
+	  	}
+	  	.date {
+	  		margin : 0 0 0 10px;
+	  		font-size: 12px;
+	  		color : $lightGrey;
+	  	}
+	  	&:hover {
+	  		&:after {
+	  			transform : rotate(0deg);
+	  		}
+	  		&:before {
+	  			
+	  		}
+	  	}
+  	}
+}

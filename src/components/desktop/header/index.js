@@ -3,7 +3,7 @@ import _ from '_';
 import {Localize, Link, i18n, i18nComponent, routerComponent, Asset, assets, router} from 'dan';
 import config from 'config';
 import './styles.scss';
-import Projects from 'components/app/projects';
+import Projects from 'desktop/projects';
 import {AnimationComponent} from 'tools/animation';
 
 @i18nComponent

@@ -13,6 +13,8 @@ module.exports = {
             // Alias
             'config': __dirname+'/src/config',
             'components': __dirname+'/src/components/',
+            'desktop': __dirname+'/src/components/desktop',
+            'mobile': __dirname+'/src/components/mobile',
             'actions': __dirname+'/src/actions/',
             'stores': __dirname+'/src/stores/',
 
