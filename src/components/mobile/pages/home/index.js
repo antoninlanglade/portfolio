@@ -9,7 +9,6 @@ import {AnimationComponent} from 'tools/animation';
 import 'gsap';
 import rebound from 'rebound';
 
-var visibleRaws = 3;
 
 @i18nComponent
 @AnimationComponent
@@ -18,7 +17,7 @@ export default class Home extends React.Component {
         super(props);
         
         this.offsetLeft = 0;
-        this.index = visibleRaws - 1;
+        
         this.dom = {};
         this.data = {};
         this.items = [];
@@ -37,15 +36,13 @@ export default class Home extends React.Component {
             this.dom['projectItem'+key] = ReactDOM.findDOMNode(this.refs['projectItem'+key]);
             this.items.push({
                 ref : this.refs['projectItem'+key],
-                dom : this.dom['projectItem'+key],
-                visible : key < 3 ? true : false
+                dom : this.dom['projectItem'+key]
             });
         });
-        this.dom.el.addEventListener("scroll", this.testScroll);
     }
 
     componentDidAppear() {
-        this.animateItems();
+        this.animateItems(Home.direction.IN);
     }
 
     componentWillUnAppear() {
@@ -53,68 +50,15 @@ export default class Home extends React.Component {
     }
 
     componentWillUnmount() {
-      // window.addEventListener('scroll', this.scroll);
+      
     }
 
-    animateItems() {
+    animateItems(direction) {
         _.forEach(this.items, (item, key) => {
-            key <= this.index ? item.ref.animationIn() : item.ref.animationOut();
+            direction === Home.direction.IN ? item.ref.animationIn() : direction === Home.direction.OUT ? item.ref.animationOut() : null;
         });
     }
 
-    testScroll(e) {
-      console.log('test',e);
-    }
-
-    goTo(direction) {
-        // If out of bounds
-        if (!this.isItemWithDirection(this.index, direction)) {
-            return;
-        }
-        
-        if (direction === Home.direction.RIGHT) {
-            this.offsetLeft++;
-            this.index++;
-            this.items[this.index].visible = true;
-            for (var i = 0; i < this.items.length; i++) {
-                if (i < this.index - (visibleRaws - 1)) {
-                    this.items[i].visible = false;    
-                }
-            }
-        }
-        else if (direction === Home.direction.LEFT && this.index > visibleRaws - 1) {
-            this.offsetLeft--;
-            this.index--;
-            this.items[this.index].visible = true;
-            for (var i = 0; i < this.items.length; i++) {
-                if (i < this.index + (visibleRaws - 1)) {
-                    this.items[i].visible = false;    
-                }
-            }
-        }
-        this.animateItems();
-
-        this.dom.projectList.style.transform = "translate3d("+(-this.offsetLeft*100/3)+"%, 0, 0)";
-        
-    }
-    isItemWithDirection(index, direction) {
-        var isItemAtPosition = false;
-        _.forEach(this.items, (item, key) => {
-            if (direction === Home.direction.RIGHT && index < key) {
-                isItemAtPosition |= item.visible === false;    
-            }
-            else if (direction === Home.direction.LEFT && index > key) {
-                isItemAtPosition |= item.visible === false;    
-            }
-        });
-        return isItemAtPosition;
-    }
-
-    moveToBackground() {
-        _.forEach(this.items, (item, key) => {
-            item.dom.style.zIndex = 1;
-        }); 
-    }
 
     animateAllOut(callback) {
          _.forEach(this.items, (item) => {
@@ -126,16 +70,24 @@ export default class Home extends React.Component {
     render() {
         var projects = this.data.map((item, key) => {
             return (
-                <ProjectItem ref={"projectItem"+key} data={{item : item, key : key}} key={key} moveToBackground={this.moveToBackground.bind(this)} animationOut={this.animateAllOut.bind(this)}/>
+                <ProjectItem ref={"projectItem"+key} data={{item : item, key : key}} key={key}  animationOut={this.animateAllOut.bind(this)}/>
             );
         });
         return (
             <div className="component home">
-                <div className="arrows">
-                    <span onClick={this.goTo.bind(this,Home.direction.LEFT)}><img src={config.path+'img/arrow.svg'} alt="Arrows"/></span>
-                    <span onClick={this.goTo.bind(this,Home.direction.RIGHT)}><img src={config.path+'img/arrow.svg'} alt="Arrows"/></span>
+                <div className="shortDescription">
+                    <Localize>short-description</Localize>
+                </div>
+                <div className="links">
+                    <Link route="about"><Localize>about</Localize></Link>
+                    <Link href="https://twitter.com/antoninlanglade" target="blank">Twitter</Link>
+                    <Link href="https://github.com/antoninlanglade" target="blank">Github</Link>
                 </div>
                 <ul className="project-list" ref="projectList">
+                    <div className="someWork">
+                        <img className="arrowBottom" src={config.path+'img/arrow.svg'} alt="arrow"/>
+                        <Localize>some-work</Localize>
+                    </div>
                     {projects}
                 </ul>
             </div>
@@ -144,5 +96,7 @@ export default class Home extends React.Component {
 }
 Home.direction = {
     LEFT : 1,
-    RIGHT : 2
+    RIGHT : 2,
+    IN : 3,
+    OUT : 4
 }

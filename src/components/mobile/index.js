@@ -116,12 +116,10 @@ export default class MobileApp extends React.Component {
             this.firstLoad = false;
             current.setContent('div', params);
             current.el.style.display = 'none';
-            this.refs.header.componentDidAppear();
             TweenMax.to(this.el,1, {
                 width : "100%",
                 onComplete : () => {
                     TweenMax.to(this.DOM.pages, .5, {
-                        width : "80%",
                         onComplete : () => {
                             next.component && next.component.componentDidAppear && next.component.componentDidAppear();
                             
@@ -147,7 +145,6 @@ export default class MobileApp extends React.Component {
         
         // Swap
         this.currentIndex = (this.currentIndex + 1) % this.pages.length;
-        
     }
 
     shouldComponentUpdate(props, state) {
@@ -158,12 +155,10 @@ export default class MobileApp extends React.Component {
         this.pages = [];
         return (
             <div className="component app">
-                <Header ref="header"/>
                 <div className="pages" ref="pages">
                     <Page ref="p0" />
                     <Page ref="p1" />
                 </div>
-                
             </div>
         );
     }

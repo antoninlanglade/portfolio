@@ -1,11 +1,10 @@
 @import "~config/styles.scss";
 
-.component.header {
+.desktopApp .component.header {
   .title {
     display : inline-block;
     margin: 70px 0 0 0;
     transition : margin-left 0.5s, opacity 0.5s;
-    transition-delay : 0.25s;
     opacity : 0;
     @include tablet() {
     	margin: 50px 0 0 0;
@@ -25,7 +24,7 @@
     right: 10px;
     cursor: pointer;
     transition : opacity 0.25s;
-    transition-delay : 1.25s;
+    transition-delay : 0.25s;
     a {
       margin : 5px;
       &.current {

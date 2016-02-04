@@ -116,13 +116,14 @@ export default class DesktopApp extends React.Component {
             this.firstLoad = false;
             current.setContent('div', params);
             current.el.style.display = 'none';
-            this.refs.header.componentDidAppear();
+            
             TweenMax.to(this.el,1, {
                 width : "100%",
                 onComplete : () => {
                     TweenMax.to(this.DOM.pages, .5, {
                         width : "80%",
                         onComplete : () => {
+                            this.refs.header.componentDidAppear();
                             next.component && next.component.componentDidAppear && next.component.componentDidAppear();
                             this.refs.footer && this.refs.footer.componentDidAppear();
                         }

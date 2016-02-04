@@ -42,6 +42,8 @@ export default class App extends React.Component {
             media = isMobile?TYPE.MOBILE:TYPE.DESKTOP;
 
         var swap = () => {
+            var container = document.getElementById('container');
+            container.className = media;
             this.setState({
                 media: media,
                 mediaComponent: components[media]

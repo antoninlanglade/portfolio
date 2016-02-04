@@ -69,8 +69,8 @@ export default class Projects extends React.Component {
       
         return (
             <div className="component projects">
-            <div className="left">{projects.left}</div>
-                <div className="right">{projects.right}</div>          
+              <div className="left">{projects.left}</div>
+              <div className="right">{projects.right}</div>          
             </div>
         );
     }

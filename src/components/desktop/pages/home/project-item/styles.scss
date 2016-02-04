@@ -1,6 +1,6 @@
 @import "~config/styles.scss";
 
-.component.project-item {
+.desktopApp .component.project-item {
 	color : white;
 	cursor : pointer;
 	position: absolute;
@@ -11,7 +11,7 @@
 	.title {
 		opacity : 0;
 		transition : opacity 0.30s;
-		transition-delay : 0.25s;
+		transition-delay : 0.10s;
 	}
 	&:hover {
 		transform : scale(1.1,1.1);

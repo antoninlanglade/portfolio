@@ -46,18 +46,10 @@ export default class ProjectItem extends React.Component {
         });
     }
 
-    overIn() {
-        this.props.moveToBackground && this.props.moveToBackground();
-        this.dom.el.style.zIndex = 3;
-    }
-
-    overOut() {
-        this.dom.el.style.zIndex = 2;
-    }
+    
 
     render() {
         var style = {
-            right : 100/3*2 - (this.props.data.key * (100/3))+"%",
             backgroundImage : 'url('+(config.path+this.props.data.item.content.images[0])+')',
             backgroundRepeat : 'none',
             backgroundSize : 'cover',
@@ -66,7 +58,7 @@ export default class ProjectItem extends React.Component {
         };
 
         return (
-            <li className="component project-item animationOut" ref="projectItem" onMouseOver={this.overIn.bind(this)} onMouseLeave={this.overOut.bind(this)} onClick={this.openProject.bind(this,this.props.data.key)} style={style}>
+            <li className="component project-item animationOut" ref="projectItem" onClick={this.openProject.bind(this,this.props.data.key)} style={style}>
                 <span className="title">{this.props.data.item.name}</span>
             </li>
         ); 
