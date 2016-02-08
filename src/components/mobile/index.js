@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import {Localize, Link, router, Loader, assets, i18n, ensure} from 'dan';
 import 'gsap';
 import './styles.scss';
+import Config from 'config';
 import Header from 'desktop/header';
 import Footer from 'desktop/footer';
+import _ from '_';
 
 class Page extends React.Component {
     constructor(props) {
@@ -14,6 +16,11 @@ class Page extends React.Component {
             params: {}
         };
         this.rand = parseInt(Math.random()*1000);
+        this.data = i18n.localize('data', null, 'data', i18n.locale);
+        
+        _.forEach(this.data, (project, index) => {
+            assets.add(Config.path+project.content.images[0],'project-detail-'+index);
+        });
     }
 
     componentDidMount() {
