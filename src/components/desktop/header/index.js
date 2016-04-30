@@ -6,8 +6,6 @@ import './styles.scss';
 import Projects from 'desktop/projects';
 import {AnimationComponent} from 'tools/animation';
 
-@i18nComponent
-@routerComponent
 @AnimationComponent
 export default class Header extends React.Component {
     constructor(props) {
@@ -15,14 +13,8 @@ export default class Header extends React.Component {
 
     }
 
-    changeLocale(locale, e) {
-        e.preventDefault();
-        i18n.locale = locale;
-    }
-
     render() {
-        
-        var params = router.ctx && router.ctx.params?router.ctx.params:{};
+    
         return (
             <div className="component header">
                 <div className="title">
@@ -30,13 +22,6 @@ export default class Header extends React.Component {
                     <Link route="home"><div className="developer"><Localize>interactive-dev</Localize></div></Link>
                 </div>
                 <Projects /> 
-                <div className="locale">
-                    {
-                        config.locales.map((locale) => {
-                            return <Link {...params} route={router.route} locale={locale} className={"lang "+(i18n.locale === locale?"current":"")} key={locale}>{locale}</Link>
-                        })
-                    }
-                </div>
             </div>
         );
     }

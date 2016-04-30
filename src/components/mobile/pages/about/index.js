@@ -14,12 +14,12 @@ export default class About extends React.Component {
     }
 
     componentDidAppear() {
-        console.log("appear");
+
     }
 
     
     componentWillUnAppear() {
-        console.log("unappear");
+
     }
 
     render() {

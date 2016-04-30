@@ -106,6 +106,7 @@
 					}
 				],
 				"role" : "iOS Developer",
+				"url" : "http://maximerimbert.fr/",
 				"description" : "Coated is a conceptual news app. done with the Reuters fondation. Because of the news surplus in Media, it promotes a context for each news with the possibility for the user to follow the evolution of each one of the news due to the stories concept. The app is based on the idea of building layers of information which the users can read depending on the amount of time they have."
 			}
 		},
@@ -128,7 +129,7 @@
 				"role" : "iOS Developer",
 				"awards" : "TBWA\\DanParis",
 				"description" : "To share its new concept of travel, Air France has designed the exhibition 'Air France, France is in the air'. An interactive exhibition with an iOS app and iBeacons that can unlock content throughout the exhibition.",
-				"url" : "http://expo.airfrance.com/fr/"
+				"url" : "http://www.grandpalais.fr/fr/article/lexposition-air-france-france-air-fait-escale-paris"
 			}
 		},
 		{
@@ -149,6 +150,7 @@
 				],
 				"role" : "Front-End Developer",
 				"awards" : "Silver Lion / Mobile of the Day FWA / Site of the Day Awwwards",
+				"url" : "http://www.blogdumoderateur.com/defi-ingenieurs-serious-game-sncf/",
 				"description" : "Défi Ingénieurs is a serious game that immerses students in the universe of the SNCF. This game aims to discover real problems of SNCF engineers, while giving an overview of the issues of the trade. Future engineers can explore the tasks to SNCF employees and project through the challenges offered by the game."
 			}
 		}	

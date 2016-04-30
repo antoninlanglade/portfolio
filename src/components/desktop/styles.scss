@@ -25,6 +25,7 @@ body, html, #container.desktopApp {
 	height : 100%;
 	font-family : "Apercu";
 	user-select: none;
+	overflow : hidden;
 }
 #container.desktopApp {
 	overflow-y:hidden;

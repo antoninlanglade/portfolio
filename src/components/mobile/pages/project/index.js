@@ -47,7 +47,6 @@ export default class Description extends React.Component {
     onScroll(e) {
         
         if (!this.sticky && window.scrollY > 20) {
-            console.log('sticky')
             this.sticky = true;
             TweenMax.to(this.dom.leftBlock, .1, {
                 y : -230,
@@ -59,7 +58,6 @@ export default class Description extends React.Component {
             });
         }
         else if(this.sticky && window.scrollY < 20) {
-            console.log('unsticky')
             this.sticky = false;
             TweenMax.to(this.dom.leftBlock, .1, {
                 y : 0,

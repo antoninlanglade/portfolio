@@ -33,7 +33,8 @@ module.exports = {
             'alt/utils': __dirname+'/node_modules/alt/utils/',
             'alt': __dirname+'/node_modules/alt/dist/alt.js',
             'signals' : __dirname+'/node_modules/signals/dist/signals.js',
-            'rebound' : __dirname+'/node_modules/rebound/rebound.min.js'
+            'rebound' : __dirname+'/node_modules/rebound/rebound.min.js',
+            'wheel-inertia' : __dirname+'/node_modules/wheel-inertia/index.js'
         }
     },
     plugins: [

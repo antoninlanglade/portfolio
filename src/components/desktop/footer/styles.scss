@@ -15,4 +15,21 @@
 		left : 70px;
 		opacity : 1;
 	}
+	.locale {
+		opacity : 0.6;
+		display : inline-block;
+	    cursor: pointer;
+	    transition : opacity 0.25s;
+	    transition-delay : 0.25s;
+	    a {
+	      margin : 0px;
+	      &.current {
+	        text-decoration: underline;
+	      } 
+	    }
+ 	}
+ 	.separator {
+ 		color : #999999;
+ 		margin: 0 2px;
+ 	}
 }

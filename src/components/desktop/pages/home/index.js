@@ -7,7 +7,8 @@ import './styles.scss';
 import ProjectItem from './project-item/';
 import {AnimationComponent} from 'tools/animation';
 import 'gsap';
-import rebound from 'rebound';
+import inertia from 'wheel-inertia'
+
 
 var visibleRaws = 3;
 
@@ -24,8 +25,9 @@ export default class Home extends React.Component {
         this.items = [];
         this.sync();
         this.canWheel = true;
-        this.onWheel = _.throttle(this.onWheel.bind(this), 100);
-        
+        this.timer = null;
+        this.move = this.move.bind(this);
+        this.onWheel = this.onWheel.bind(this);
     }
 
     sync() {
@@ -43,7 +45,10 @@ export default class Home extends React.Component {
                 visible : key < 3 ? true : false
             });
         });
-        // window.addEventListener('wheel', this.onWheel);
+        window.addEventListener('wheel', this.onWheel);
+        
+        // Add your callback
+        inertia.addCallback(this.move)
     }
 
     componentDidAppear() {
@@ -55,19 +60,17 @@ export default class Home extends React.Component {
     }
 
     componentWillUnmount() {
-        // window.removeEventListener('wheel', this.onWheel);
+        window.removeEventListener('wheel', this.onWheel);
     }
-
-    onWheel(e) { 
-        var direction = e.deltaY >= 0 ? Home.direction.RIGHT : Home.direction.LEFT;
-        if (this.canWheel && this.isItemWithDirection(this.index, direction)) {
-                console.log(this.canWheel);
-                this.canWheel = false;
-                this.goTo(direction);
-                setTimeout(() => {
-                    this.canWheel = true;
-                }, 900);
+    move(test) {
+        var direction = test === -1 ? Home.direction.RIGHT : Home.direction.LEFT;
+        if (this.isItemWithDirection(this.index, direction)) {
+            this.goTo(direction);   
         }
+    }
+    onWheel(e) { 
+        var delta = e.wheelDelta
+        inertia.update(delta)
     }   
     animateItems() {
         _.forEach(this.items, (item, key) => {
@@ -109,6 +112,10 @@ export default class Home extends React.Component {
         this.animateItems();
 
         this.dom.projectList.style.transform = "translate3d("+(-this.offsetLeft*100/3)+"%, 0, 0)";
+        this.dom.projectList.addEventListener('animationend', () => {
+            console.log('test');
+            this.canWheel = true;
+        });
         
     }
     isItemWithDirection(index, direction) {

@@ -28,7 +28,8 @@
     "react-dom": "^0.14.1",
     "rebound": "0.0.13",
     "signals": "^1.0.0",
-    "webfontloader": "^1.6.10"
+    "webfontloader": "^1.6.10",
+    "wheel-inertia": "0.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
