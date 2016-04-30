@@ -1,6 +1,28 @@
 {
 	"data" : [
 		{
+			"name" : "Défi Ingénieurs 3",
+			"color" : "green",
+			"date" : "2016",
+			"route" : "defi3",
+			"lightColor" : "rgba(102, 216, 164, 1)",
+			"blackColor" : "rgba(77, 165, 127, 1)",
+			"content" : {
+				"images" : ["img/projects/sncf_@2x.png"],
+				"context" : "TBWA\\DanParis",
+				"persons" : [
+					{
+						"name" : "Sidney Bourgalle",
+						"url" : "https://www.linkedin.com/in/sidney-bourgall%C3%A9-a79276a9"
+					}
+				],
+				"role" : "Front-End Developer",
+				"awards" : "Site of the Day FWA / Honorable Mention Awwwards",
+				"url" : "https://defi-ingenieurs.sncf.com/",
+				"description" : "Défi ingénieur est un serious game qui immerge les étudiants dans l'univers de la SNCF. Ce jeu a pour vocation de faire découvrir de réelles problématiques auxquelles les ingénieurs SNCF sont confrontés quotidiennement, donnant alors un aperçu des enjeux du métier. Les futurs ingénieurs peuvent découvrir les tâches qui incombent aux employés SNCF et se projeter grâce aux défis que propose le jeu."
+			}
+		},
+		{
 			"name" : "Mirage",
 			"color" : "purple",
 			"date" : "2015",
@@ -9,23 +31,23 @@
 			"blackColor" : "rgba(75, 47, 165, 1)",
 			"content" : {
 				"images" : ["img/projects/mirage_@2x.png"] ,
-				"context" : "School Project / Gobelins Paris",
+				"context" : "Projet École / Gobelins Paris",
 				"persons" : [
 					{
 						"name" : "Sylvain Reucherand",
-						"url" : ""
+						"url" : "http://www.sylvainreucherand.fr/"
 					},
 					{
 						"name" : "Julie Muckensturm",
-						"url" : ""
+						"url" : "http://iamjulie.cool/"
 					},
 					{
 						"name" : "Laure Marchadier",
-						"url" : ""
+						"url" : "http://www.lauremjoy.com/"
 					}
 				],
 				"role" : "Concept Créatif, Développement Interactif, Superviseur sonore, Acteur",
-				"description" : "Mirage est un court film interactif. C'est mon projet de fin d'études dans la section Design Interactif à Gobelins Paris. ",
+				"description" : "Mirage est un court film interactif. C'est mon projet de fin d'études à Gobelins dans la section designer interactif. Edward aime sa femme et son fils. Il est apeuré de tout ce qu'il pourrait leur arriver. Il rêve donc de lui plus fort, et plus conscient du monde qui l'entoure dans le but de les protéger. C'est l'histoire d'un homme qui rêve du transumanisme. Il rêve d'IO, une intelligence artificielle implantée dans sa tête qui peut analyser n'importe qu'elle situation bien plus rapidement que lui et qui peut lui suggérer les choix qu'il devrait prendre.",
 				"url" : "http://lab.antoninlanglade.com/mirage"
 			}
 		},
@@ -42,20 +64,16 @@
 				"persons" : [
 					{
 						"name" : "Emal Saifi",
-						"url" : ""
-					},
-					{
-						"name" : "Olivier Lestang",
-						"url" : ""
+						"url" : "http://emalsaifi.com/"
 					},
 					{
 						"name" : "Sidney Bourgalle",
-						"url" : ""
+						"url" : "https://www.linkedin.com/in/sidney-bourgall%C3%A9-a79276a9"
 					}
 				],
 				"role" : "Développeur iOS",
-				"awards" : "",
-				"url" : "http://lab.antoninlanglade.com/mirage"
+				"description" : "O.P.I Color Chat est un alpha­bet de 145 carac­tères réalisé à partir de gouttes de vernis de couleurs diffé­rentes. Le but de l'application est d'écrire des messages qui sont codés en gouttes de vernis. “Avec des points, on fait des lettres, avec des lettres, on fait des mots. Avec des mots, on dit tout ce que l’on veut. Alors, expri­mez-vous en couleurs!”",
+				"url" : "https://colorchat.opi.com/"
 			}
 		},
 		{
@@ -67,27 +85,27 @@
 			"blackColor" : "rgba(206, 140, 47, 1)",
 			"content" : {
 				"images" : ["img/projects/coated_@2x.png"] ,
-				"context" : "",
+				"context" : "Projet École / Gobelins Paris",
 				"persons" : [
 					{
 						"name" : "Maxime Rimbert",
-						"url" : ""
+						"url" : "http://maximerimbert.fr/"
 					},
 					{
 						"name" : "Nicolas Vittori",
-						"url" : ""
+						"url" : "http://nicolasvittori.com/"
 					},
 					{
 						"name" : "Tohme Athanasios",
-						"url" : ""
+						"url" : "https://www.behance.net/athanassios/"
 					},
 					{
 						"name" : "Jean-Baptiste Penrath",
-						"url" : ""
+						"url" : "http://jb-penrath.fr/"
 					}
 				],
 				"role" : "Développeur iOS",
-				"awards" : ""
+				"description" : "Coated est une application conceptuell crée en partenariat avec la fondation Reuters. À cause du surplus dans les médias, cette application mets en avant un contexte pour chaques actualité avec la possibilité pour l'utilisateur de suivre l'évolution de chacune des actualités grâce au concept des histoires. L'application est basée sur l'idée de construire des calques d'informations que l'utliisateur pourra lire en fonction du temps qu'il aura dans sa journée."
 			}
 		},
 		{
@@ -103,19 +121,20 @@
 				"persons" : [
 					{
 						"name" : "Emal Saifi",
-						"url" : ""
+						"url" : "http://emalsaifi.com/"
 					}
 				],
 				"role" : "Développeur iOS",
 				"awards" : "",
-				"url" : "lab.antoninlanglade.com/mirage"
+				"description" : "Pour partager sa nouvelle conception du voyage, Air France a imaginé l’exposition 'Air France, France is in the air'. Une exposition interactive grâce à une application iOS et des iBeacons qui permettent de débloquer des contenus tout au long de l'exposition.",
+				"url" : "http://expo.airfrance.com/fr/"
 			}
 		},
 		{
 			"name" : "Défi Ingénieurs 2",
 			"color" : "green",
 			"date" : "2014",
-			"route" : "defi",
+			"route" : "defi2",
 			"lightColor" : "rgba(102, 216, 164, 1)",
 			"blackColor" : "rgba(77, 165, 127, 1)",
 			"content" : {
@@ -124,11 +143,12 @@
 				"persons" : [
 					{
 						"name" : "Emal Saifi",
-						"url" : ""
+						"url" : "http://emalsaifi.com/"
 					}
 				],
 				"role" : "Développeur Front-End",
-				"awards" : ""
+				"description" : "Défi ingénieur est un serious game qui immerge les étudiants dans l'univers de la SNCF. Ce jeu a pour vocation de faire découvrir de réelles problématiques auxquelles les ingénieurs SNCF sont confrontés quotidiennement, donnant alors un aperçu des enjeux du métier. Les futurs ingénieurs peuvent découvrir les tâches qui incombent aux employés SNCF et se projeter grâce aux défis que propose le jeu.",
+				"awards" : "Silver Lion / Mobile of the Day FWA / Site of the Day Awwwards"
 			}
 		}	
 	]

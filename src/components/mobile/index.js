@@ -110,7 +110,6 @@ export default class MobileApp extends React.Component {
 
         // New content
         next.setContent(view, params);
-
         // Animation
         TweenMax.killTweensOf([
             current.el,
@@ -118,36 +117,40 @@ export default class MobileApp extends React.Component {
         ]);
         
         current.component.componentWillUnAppear && current.component.componentWillUnAppear();
-        
         if (this.firstLoad) {
             this.firstLoad = false;
-            current.setContent('div', params);
-            current.el.style.display = 'none';
-            TweenMax.to(this.el,1, {
-                width : "100%",
-                onComplete : () => {
-                    TweenMax.to(this.DOM.pages, .5, {
-                        onComplete : () => {
-                            next.component && next.component.componentDidAppear && next.component.componentDidAppear();
-                            
-                        }
-                    });
-                }
-            });
+            setTimeout(() => {
+                current.setContent('div', params);
+                current.el.style.display = 'none';
+                window.scrollTo(0,0);
+                TweenMax.to(this.el,1, {
+                    width : "100%",
+                    onComplete : () => {
+                        TweenMax.to(this.DOM.pages, .5, {
+                            onComplete : () => {
+                                next.component && next.component.componentDidAppear && next.component.componentDidAppear();
+                            }
+                        });
+                    }
+                });
+            }, 500);
         }
         else {
-            TweenMax.to(current.el, .35, {
-                onComplete: () => {
-                    current.setContent('div', params);
-                    current.el.style.display = 'none';
-                    next.el.style.display = '';
-                    TweenMax.to(next.el, .25, {
-                        onComplete : () => {
-                            next.component && next.component.componentDidAppear && next.component.componentDidAppear();
-                        }
-                    });
-                }
-            });
+            setTimeout(() => {
+                TweenMax.to(current.el, .35, {
+                    onComplete: () => {
+                        current.setContent('div', params);
+                        current.el.style.display = 'none';
+                        next.el.style.display = '';
+                        window.scrollTo(0,0);
+                        TweenMax.to(next.el, .25, {
+                            onComplete : () => {
+                                next.component && next.component.componentDidAppear && next.component.componentDidAppear();
+                            }
+                        });
+                    }
+                });
+            }, 500);
         }
         
         // Swap

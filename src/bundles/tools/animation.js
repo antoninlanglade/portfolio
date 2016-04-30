@@ -8,7 +8,7 @@ export var AnimationComponent = function(target) {
         var componentDidAppear = target.prototype.componentDidAppear,
             componentWillUnAppear = target.prototype.componentWillUnAppear,
             events = [];
-
+            
         target.prototype.componentDidAppear = function() {
             var el = ReactDOM.findDOMNode(this);
             if (el) {

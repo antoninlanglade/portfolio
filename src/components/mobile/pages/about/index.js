@@ -13,6 +13,15 @@ export default class About extends React.Component {
         super(props);
     }
 
+    componentDidAppear() {
+        console.log("appear");
+    }
+
+    
+    componentWillUnAppear() {
+        console.log("unappear");
+    }
+
     render() {
         return (
             <div className="component about">

@@ -23,6 +23,8 @@ export default class Home extends React.Component {
         this.data = {};
         this.items = [];
         this.sync();
+        this.canWheel = true;
+        this.onWheel = _.throttle(this.onWheel.bind(this), 100);
         
     }
 
@@ -41,7 +43,7 @@ export default class Home extends React.Component {
                 visible : key < 3 ? true : false
             });
         });
-        this.dom.el.addEventListener("scroll", this.testScroll);
+        // window.addEventListener('wheel', this.onWheel);
     }
 
     componentDidAppear() {
@@ -53,9 +55,20 @@ export default class Home extends React.Component {
     }
 
     componentWillUnmount() {
-      // window.addEventListener('scroll', this.scroll);
+        // window.removeEventListener('wheel', this.onWheel);
     }
 
+    onWheel(e) { 
+        var direction = e.deltaY >= 0 ? Home.direction.RIGHT : Home.direction.LEFT;
+        if (this.canWheel && this.isItemWithDirection(this.index, direction)) {
+                console.log(this.canWheel);
+                this.canWheel = false;
+                this.goTo(direction);
+                setTimeout(() => {
+                    this.canWheel = true;
+                }, 900);
+        }
+    }   
     animateItems() {
         _.forEach(this.items, (item, key) => {
             key <= this.index ? item.ref.animationIn() : item.ref.animationOut();
@@ -63,6 +76,7 @@ export default class Home extends React.Component {
     }
 
     testScroll(e) {
+
       console.log('test',e);
     }
 

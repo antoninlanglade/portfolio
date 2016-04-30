@@ -53,4 +53,17 @@
       opacity : 1;
     }
   }
+  &.animationOut {
+    .title {
+      opacity : 0;
+    }
+    .projects {
+      .left, .right {
+        opacity : 0;
+      }
+    }
+    .locale {
+      opacity : 0;
+    }
+  }
 }

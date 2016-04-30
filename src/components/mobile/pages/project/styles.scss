@@ -3,18 +3,66 @@
 .mobileApp .component.description {
 	width : 100%;
 	height : 100%;
-	position : relative;
-
+	position : relative;	
+	transition : all 0.5;
 	
+	&.animationIn {
+		.left-block {
+			left : 0px;
+		}
+		.right-block {
+			opacity : 1;
+			transform : translate3d(0, 0, 0);
+		}
+		.top-banner {
+			.url, .close {
+				transform : translate3d(0, 0, 0);
+			}
+		}
+	}
+
+	&.animationOut {
+		.left-block {
+			left : -100%;	
+		}
+		.right-block {
+			opacity : 0;
+			transform : translate3d(0, 20px, 0);
+		}
+		.top-banner {
+			.url, .close {
+				transform : translate3d(0, -100px, 0);
+				transition-delay : 0s;
+			}
+		}
+	}
+
 	.top-banner {
 		position : fixed;
+		z-index: 11;
 		top: 0;
 		left: 0;
-		width: calc(100% - 20px);
-		padding : 10px;
-		transition : opacity 0.5s;
+		width: calc(100% - 40px);
+		padding : 20px;
 		img {
 			width : 12px;
+		}
+		.url {
+			float: left;
+			color : white;
+			transform : translate3d(0, -100px, 0);
+			transition : all 0.5s;
+			transition-delay : 0.25s;
+		}
+		.close {
+			float : right;
+			color : white;
+			transform : translate3d(0, -100px, 0);
+			transition : all 0.5s;
+			transition-delay : 0.45s;
+		}
+		.clr {
+			clear : both;
 		}
 	}
 	.left-block, .right-block{
@@ -22,10 +70,14 @@
 		vertical-align: middle;
 	}
 	.left-block {
+		position : fixed;
+		top : 0;
+		left: -100%;
 		height: 300px;
 		width: 100%;
+		z-index: 10;
 		text-align: center;
-		transition : width 0.35s;
+		transition : all 0.25s;
 		.imageDescription {
 			width : 100%;
 			height : 100%;
@@ -35,15 +87,16 @@
 	}
 	.right-block {
 		z-index: 3;
-		margin: 0 35px;
-		transition : opacity 0.35s;
-		transition-delay : 0.35s;
+		margin: 300px 35px 0 35px;
+		transition : all 0.35s;
+		opacity : 0;
+		transform : translate3d(0, 20px, 0);
 		&::-webkit-scrollbar {
 			display : none;
 		}
 		h2 {
 			font-size: 57px;
-			margin : 70px 0 60px 0;
+			margin: 30px 0;
 		}
 		.keys {
 			margin : 0 0 30px 0;

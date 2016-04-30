@@ -1,5 +1,27 @@
 {
 	"data" : [
+	{
+			"name" : "Défi Ingénieurs 3",
+			"color" : "green",
+			"date" : "2016",
+			"route" : "defi3",
+			"lightColor" : "rgba(102, 216, 164, 1)",
+			"blackColor" : "rgba(77, 165, 127, 1)",
+			"content" : {
+				"images" : ["img/projects/sncf_@2x.png"],
+				"context" : "TBWA\\DanParis",
+				"persons" : [
+					{
+						"name" : "Emal Saifi",
+						"url" : "http://emalsaifi.com/"
+					}
+				],
+				"role" : "Front-End Developer",
+				"awards" : "Site of the Day FWA / Honorable Mention Awwwards",
+				"url" : "https://defi-ingenieurs.sncf.com/",
+				"description" : "Défi Ingénieurs is a serious game that immerses students in the universe of the SNCF. This game aims to discover real problems of SNCF engineers, while giving an overview of the issues of the trade. Future engineers can explore the tasks to SNCF employees and project through the challenges offered by the game."
+			}
+		},
 		{
 			"name" : "Mirage",
 			"color" : "purple",
@@ -13,15 +35,15 @@
 				"persons" : [
 					{
 						"name" : "Sylvain Reucherand",
-						"url" : ""
+						"url" : "http://www.sylvainreucherand.fr/"
 					},
 					{
 						"name" : "Julie Muckensturm",
-						"url" : ""
+						"url" : "http://iamjulie.cool/"
 					},
 					{
 						"name" : "Laure Marchadier",
-						"url" : ""
+						"url" : "http://www.lauremjoy.com/"
 					}
 				],
 				"role" : "Creative concept, Interactive developement, Sound supervisor, Acting",
@@ -42,20 +64,17 @@
 				"persons" : [
 					{
 						"name" : "Emal Saifi",
-						"url" : ""
-					},
-					{
-						"name" : "Olivier Lestang",
-						"url" : ""
+						"url" : "http://emalsaifi.com/"
 					},
 					{
 						"name" : "Sidney Bourgalle",
-						"url" : ""
+						"url" : "https://www.linkedin.com/in/sidney-bourgall%C3%A9-a79276a9"
 					}
 				],
 				"role" : "iOS Developer",
 				"awards" : "",
-				"url" : "http://lab.antoninlanglade.com/mirage"
+				"description" : "O.P.I Color Cat is an alphabet of 145 characters made from lacquer drops of different colors. The aim of the application is to write messages that are encoded in varnish drops. With the points we made letters, with letters, is made of words. With words, we say everything we want. So express yourself in color!",
+				"url" : "https://colorchat.opi.com/"
 			}
 		},
 		{
@@ -71,23 +90,23 @@
 				"persons" : [
 					{
 						"name" : "Maxime Rimbert",
-						"url" : ""
+						"url" : "http://maximerimbert.fr/"
 					},
 					{
 						"name" : "Nicolas Vittori",
-						"url" : ""
+						"url" : "http://nicolasvittori.com/"
 					},
 					{
 						"name" : "Tohme Athanasios",
-						"url" : ""
+						"url" : "https://www.behance.net/athanassios/"
 					},
 					{
 						"name" : "Jean-Baptiste Penrath",
-						"url" : ""
+						"url" : "http://jb-penrath.fr/"
 					}
 				],
 				"role" : "iOS Developer",
-				"awards" : ""
+				"description" : "Coated is a conceptual news app. done with the Reuters fondation. Because of the news surplus in Media, it promotes a context for each news with the possibility for the user to follow the evolution of each one of the news due to the stories concept. The app is based on the idea of building layers of information which the users can read depending on the amount of time they have."
 			}
 		},
 		{
@@ -103,19 +122,20 @@
 				"persons" : [
 					{
 						"name" : "Emal Saifi",
-						"url" : ""
+						"url" : "http://emalsaifi.com/"
 					}
 				],
 				"role" : "iOS Developer",
-				"awards" : "",
-				"url" : "lab.antoninlanglade.com/mirage"
+				"awards" : "TBWA\\DanParis",
+				"description" : "To share its new concept of travel, Air France has designed the exhibition 'Air France, France is in the air'. An interactive exhibition with an iOS app and iBeacons that can unlock content throughout the exhibition.",
+				"url" : "http://expo.airfrance.com/fr/"
 			}
 		},
 		{
 			"name" : "Défi Ingénieurs 2",
 			"color" : "green",
 			"date" : "2014",
-			"route" : "defi",
+			"route" : "defi2",
 			"lightColor" : "rgba(102, 216, 164, 1)",
 			"blackColor" : "rgba(77, 165, 127, 1)",
 			"content" : {
@@ -124,11 +144,12 @@
 				"persons" : [
 					{
 						"name" : "Emal Saifi",
-						"url" : ""
+						"url" : "http://emalsaifi.com/"
 					}
 				],
 				"role" : "Front-End Developer",
-				"awards" : ""
+				"awards" : "Silver Lion / Mobile of the Day FWA / Site of the Day Awwwards",
+				"description" : "Défi Ingénieurs is a serious game that immerses students in the universe of the SNCF. This game aims to discover real problems of SNCF engineers, while giving an overview of the issues of the trade. Future engineers can explore the tasks to SNCF employees and project through the challenges offered by the game."
 			}
 		}	
 	]

@@ -22,8 +22,8 @@ export default class Projects extends React.Component {
       _.forEach(this.data,(item,key) => {
         this.dom.push(ReactDOM.findDOMNode(this.refs["project"+key]));
       });
-      
     }
+
     onHover(key, direction) {
       var opacity;
       if (direction===Projects.direction.IN) {

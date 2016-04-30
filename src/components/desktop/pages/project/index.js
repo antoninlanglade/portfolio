@@ -86,7 +86,8 @@ export default class Description extends React.Component {
         var context,
             persons,
             listPersons,
-            role;
+            role,
+            awards;
         if (this.data) {
             listPersons = this.data.content.persons.map((item, key) => {
                 return (
@@ -95,17 +96,21 @@ export default class Description extends React.Component {
             });
 
             context = this.data.content.context ? <div className="context key">
-                <span className="left-column"><Localize>context</Localize></span>
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>context</Localize></span>
                 <span className="right-column">{this.data.content.context}</span>
             </div> : null;
             persons = this.data.content.persons.length !== 0 ?<div className="with key">
-                <span className="left-column"><Localize>with</Localize></span>
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>with</Localize></span>
                 <span className="right-column">{listPersons}</span>
                 
             </div> : null;
             role = this.data.content.role ? <div className="role key">
-                <span className="left-column"><Localize>role</Localize></span>
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>role</Localize></span>
                 <span className="right-column">{this.data.content.role}</span>
+            </div> : null;
+            awards = this.data.content.awards ? <div className="awards key">
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>awards</Localize></span>
+                <span className="right-column">{this.data.content.awards}</span>
             </div> : null;
         }
 
@@ -125,6 +130,7 @@ export default class Description extends React.Component {
                         {context}
                         {persons}
                         {role}
+                        {awards} 
                     </div>
                     <div className="description">
                         {this.data.content.description}

@@ -18,6 +18,8 @@ export default class Description extends React.Component {
         this.sync();
         this.loop = true;
         this.currentImage = 0;
+        this.onScroll = this.onScroll.bind(this);
+        this.sticky = false;
     }
 
     sync() {
@@ -28,7 +30,9 @@ export default class Description extends React.Component {
 
     componentDidMount() {
         this.dom.el = ReactDOM.findDOMNode(this);
-        
+        this.dom.leftBlock = ReactDOM.findDOMNode(this.refs.leftBlock);
+        this.dom.rightBlock = ReactDOM.findDOMNode(this.refs.rightBlock);
+        window.addEventListener('scroll', this.onScroll);
     }
 
     componentDidAppear() {
@@ -38,6 +42,35 @@ export default class Description extends React.Component {
     
     componentWillUnAppear() {
 
+    }
+
+    onScroll(e) {
+        
+        if (!this.sticky && window.scrollY > 20) {
+            console.log('sticky')
+            this.sticky = true;
+            TweenMax.to(this.dom.leftBlock, .1, {
+                y : -230,
+                ease : Linear.none
+            });
+            TweenMax.to(this.dom.rightBlock, 0.1, {
+                y : -150,
+                ease : Linear.none
+            });
+        }
+        else if(this.sticky && window.scrollY < 20) {
+            console.log('unsticky')
+            this.sticky = false;
+            TweenMax.to(this.dom.leftBlock, .1, {
+                y : 0,
+                ease : Linear.none
+            });
+            TweenMax.to(this.dom.rightBlock, 0.1, {
+                y : 0,
+                ease : Linear.none
+            });
+        }
+        
     }
 
     render() {
@@ -53,30 +86,30 @@ export default class Description extends React.Component {
             });
 
             context = this.data.content.context ? <div className="context key">
-                <span className="left-column"><Localize>context</Localize></span>
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>context</Localize></span>
                 <span className="right-column">{this.data.content.context}</span>
             </div> : null;
             persons = this.data.content.persons.length !== 0 ?<div className="with key">
-                <span className="left-column"><Localize>with</Localize></span>
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>with</Localize></span>
                 <span className="right-column">{listPersons}</span>
                 
             </div> : null;
             role = this.data.content.role ? <div className="role key">
-                <span className="left-column"><Localize>role</Localize></span>
+                <span className="left-column" style={{color : this.data.blackColor}}><Localize>role</Localize></span>
                 <span className="right-column">{this.data.content.role}</span>
             </div> : null;
         }
-
         return (
             <div className="component description">
                 <div className="top-banner">
-                    <Link href={this.data.content.url} target="_blank" ref="url2" className="url"><Localize>visit website</Localize></Link>
-                    <Link route="home"><img src={config.path+'img/close.png'} alt="close"/></Link>
+                    <Link href={this.data.content.url} target="_blank" ref="url2" className="url" style={{borderBottom : "2px solid "+this.data.blackColor}}><Localize>visit website</Localize></Link>
+                    <Link route="home" className="close"><img src={config.path+'img/close_white.png'} alt="close"/></Link>
+                    <div className="clr"></div>
                 </div>
                 <div className="left-block" ref="leftBlock" style={{backgroundColor:this.data.lightColor}}>
                     <div className="imageDescription" ref="imageDescription" style={{backgroundImage: 'url('+config.path+this.data.content.images[this.currentImage]+')'}} ></div>
                 </div>
-                <div className="right-block">
+                <div className="right-block" ref="rightBlock">
                     <h2>{this.data.name}</h2>
                     <div className="keys">
                         {context}
