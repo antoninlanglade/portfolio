@@ -2,13 +2,13 @@
 	"data" : [
 		{
 			"name" : "Défi Ingénieurs 3",
-			"color" : "green",
+			"color" : "darkblue",
 			"date" : "2016",
 			"route" : "defi3",
-			"lightColor" : "rgba(102, 216, 164, 1)",
-			"blackColor" : "rgba(77, 165, 127, 1)",
+			"lightColor" : "rgb(15, 27, 48)",
+			"blackColor" : "rgb(34, 60, 108)",
 			"content" : {
-				"images" : ["img/projects/sncf_@2x.png"],
+				"images" : ["img/projects/sncf_2@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{
@@ -19,7 +19,7 @@
 				"role" : "Front-End Developer",
 				"awards" : "Site of the Day FWA / Honorable Mention Awwwards",
 				"url" : "https://defi-ingenieurs.sncf.com/",
-				"description" : "Défi ingénieur est un serious game qui immerge les étudiants dans l'univers de la SNCF. Ce jeu a pour vocation de faire découvrir de réelles problématiques auxquelles les ingénieurs SNCF sont confrontés quotidiennement, donnant alors un aperçu des enjeux du métier. Les futurs ingénieurs peuvent découvrir les tâches qui incombent aux employés SNCF et se projeter grâce aux défis que propose le jeu."
+				"description" : "Défi ingénieurs est un serious game qui immerge les étudiants dans l'univers de la SNCF. Ce jeu a pour vocation la découverte de réelles problématiques auxquelles les ingénieurs SNCF sont confrontés quotidiennement, donnant ainsi un aperçu des enjeux du métier. Les futurs ingénieurs peuvent découvrir les tâches qui incombent aux employés SNCF et se projeter grâce aux défis que propose le jeu."
 			}
 		},
 		{
@@ -30,7 +30,7 @@
 			"lightColor" : "rgba(108, 72, 243, 1)",
 			"blackColor" : "rgba(75, 47, 165, 1)",
 			"content" : {
-				"images" : ["img/projects/mirage_@2x.png"] ,
+				"images" : ["img/projects/mirage_@2x.png","img/projects/mirage_1@2x.png"] ,
 				"context" : "Projet École / Gobelins Paris",
 				"persons" : [
 					{
@@ -47,7 +47,7 @@
 					}
 				],
 				"role" : "Concept Créatif, Développement Interactif, Superviseur sonore, Acteur",
-				"description" : "Mirage est un court film interactif. C'est mon projet de fin d'études à Gobelins dans la section designer interactif. Edward aime sa femme et son fils. Il est apeuré de tout ce qu'il pourrait leur arriver. Il rêve donc de lui plus fort, et plus conscient du monde qui l'entoure dans le but de les protéger. C'est l'histoire d'un homme qui rêve du transumanisme. Il rêve d'IO, une intelligence artificielle implantée dans sa tête qui peut analyser n'importe qu'elle situation bien plus rapidement que lui et qui peut lui suggérer les choix qu'il devrait prendre.",
+				"description" : "Mirage est un court film interactif. C'est mon projet de fin d'études à Gobelins dans la section designer interactif. Edward aime sa femme et son fils. Il est apeuré de tout ce qui pourrait leur arriver. Il rêve donc de lui en se voyant plus fort, et plus conscient du monde qui l'entoure dans le but de les protéger. C'est l'histoire d'un homme qui rêve de transhumanisme. Il rêve d'IO, une intelligence artificielle implantée dans sa tête qui peut analyser n'importe qu'elle situation bien plus rapidement que lui et qui lui suggère les choix qu’il pourrait prendre.",
 				"url" : "http://lab.antoninlanglade.com/mirage"
 			}
 		},
@@ -59,7 +59,7 @@
 			"lightColor" : "rgba(235, 91, 87, 1)",
 			"blackColor" : "rgba(206, 75, 67, 1)",
 			"content" : {
-				"images" : ["img/projects/opi_@2x.png"] ,
+				"images" : ["img/projects/opi_@2x.png","img/projects/opi-01@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{
@@ -72,7 +72,7 @@
 					}
 				],
 				"role" : "Développeur iOS",
-				"description" : "O.P.I Color Chat est un alpha­bet de 145 carac­tères réalisé à partir de gouttes de vernis de couleurs diffé­rentes. Le but de l'application est d'écrire des messages qui sont codés en gouttes de vernis. “Avec des points, on fait des lettres, avec des lettres, on fait des mots. Avec des mots, on dit tout ce que l’on veut. Alors, expri­mez-vous en couleurs!”",
+				"description" : "O.P.I Color Chat est un alpha­bet de 145 carac­tères réalisé à partir de gouttes de vernis de couleurs diffé­rentes. Le but de l'application est d'écrire des messages codés en gouttes de vernis. “Avec des points, on fait des lettres, avec des lettres, on fait des mots. Avec des mots, on dit tout ce que l’on veut. Alors, expri­mez-vous en couleurs!”",
 				"url" : "https://colorchat.opi.com/"
 			}
 		},
@@ -84,7 +84,7 @@
 			"lightColor" : "rgba(244, 175, 59, 1)",
 			"blackColor" : "rgba(206, 140, 47, 1)",
 			"content" : {
-				"images" : ["img/projects/coated_@2x.png"] ,
+				"images" : ["img/projects/coated_@2x.png","img/projects/coated_1@2x.png"],
 				"context" : "Projet École / Gobelins Paris",
 				"persons" : [
 					{
@@ -105,8 +105,8 @@
 					}
 				],
 				"role" : "Développeur iOS",
-				"url" : "http://maximerimbert.fr/",
-				"description" : "Coated est une application conceptuell crée en partenariat avec la fondation Reuters. À cause du surplus dans les médias, cette application mets en avant un contexte pour chaques actualité avec la possibilité pour l'utilisateur de suivre l'évolution de chacune des actualités grâce au concept des histoires. L'application est basée sur l'idée de construire des calques d'informations que l'utliisateur pourra lire en fonction du temps qu'il aura dans sa journée."
+				"url" : "https://vimeo.com/140925608",
+				"description" : "Coated est une application conceptuell créée en partenariat avec la fondation Reuters. À cause de l’excédent d’informations dans les médias, cette application met en avant un contexte pour chaque actualité avec la possibilité pour l'utilisateur de suivre l'évolution de chacune des actualités grâce à la conceptualisation par des histoires. L'application est basée sur l'idée de construire des calques d'informations que l'utliisateur pourra lire en fonction du temps disponible dans sa journée."
 			}
 		},
 		{
@@ -148,8 +148,8 @@
 					}
 				],
 				"role" : "Développeur Front-End",
-				"description" : "Défi ingénieur est un serious game qui immerge les étudiants dans l'univers de la SNCF. Ce jeu a pour vocation de faire découvrir de réelles problématiques auxquelles les ingénieurs SNCF sont confrontés quotidiennement, donnant alors un aperçu des enjeux du métier. Les futurs ingénieurs peuvent découvrir les tâches qui incombent aux employés SNCF et se projeter grâce aux défis que propose le jeu.",
-				"url" : "http://www.blogdumoderateur.com/defi-ingenieurs-serious-game-sncf/",
+				"description" : "Défi ingénieurs est un serious game qui immerge les étudiants dans l'univers de la SNCF. Ce jeu a pour vocation la découverte de réelles problématiques auxquelles les ingénieurs SNCF sont confrontés quotidiennement, donnant ainsi un aperçu des enjeux du métier. Les futurs ingénieurs peuvent découvrir les tâches qui incombent aux employés SNCF et se projeter grâce aux défis que propose le jeu.",
+				"url" : "http://louisansa.com/project/defi-ingenieurs",
 				"awards" : "Silver Lion / Mobile of the Day FWA / Site of the Day Awwwards"
 			}
 		}	

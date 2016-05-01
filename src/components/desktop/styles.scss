@@ -57,6 +57,37 @@ a {
 	.line-hover {
 		position : relative;
 		z-index: 1;
+		color : black;
+		&.purple {
+			&:after, &:before {
+  				background: rgba(75, 47, 165, 1);
+  			}
+	  	}
+	  	&.green {
+	  		&:after, &:before {
+	  			background: rgba(77, 165, 127, 1);
+	  		}
+	  	}
+	  	&.blue {
+	  		&:after, &:before {
+	  			background: rgba(51, 108, 195, 1);
+	  		}
+	  	}
+	  	&.yellow {
+	  		&:after, &:before {
+	  			background: rgba(206, 140, 47, 1);
+	  		}
+	  	}
+	  	&.orange {
+	  		&:after, &:before {
+	  			background: rgba(206, 75, 67, 1);
+	  		}
+	  	}
+	  	&.darkblue {
+	  		&:after, &:before {
+	  			background: rgb(34, 60, 108);
+	  		}
+	  	}
 		&:before {
 			content : "";
 			width : 100%;
@@ -64,7 +95,7 @@ a {
 			left : 0;
 			bottom : 0;
 			position : absolute;
-			background: black;
+			background: #999999;
 			opacity: 0;
 			transition: height 0.20s, bottom 0.20s;
 			animation-delay : 1s;
@@ -78,7 +109,7 @@ a {
 			left : 0;
 			bottom : 0;
 			position : absolute;
-			background: black;
+			background: #999999;
 			transition: height 0.20s;
 			z-index: 1;
 		}

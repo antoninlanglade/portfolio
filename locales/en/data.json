@@ -2,13 +2,13 @@
 	"data" : [
 	{
 			"name" : "Défi Ingénieurs 3",
-			"color" : "green",
+			"color" : "darkblue",
 			"date" : "2016",
 			"route" : "defi3",
-			"lightColor" : "rgba(102, 216, 164, 1)",
-			"blackColor" : "rgba(77, 165, 127, 1)",
+			"lightColor" : "rgb(15, 27, 48)",
+			"blackColor" : "rgb(34, 60, 108)",
 			"content" : {
-				"images" : ["img/projects/sncf_@2x.png"],
+				"images" : ["img/projects/sncf_2@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{
@@ -30,7 +30,7 @@
 			"lightColor" : "rgba(108, 72, 243, 1)",
 			"blackColor" : "rgba(75, 47, 165, 1)",
 			"content" : {
-				"images" : ["img/projects/mirage_@2x.png","img/projects/opi_@2x.png"],
+				"images" : ["img/projects/mirage_@2x.png","img/projects/mirage_1@2x.png"],
 				"context" : "School Project / Gobelins Paris",
 				"persons" : [
 					{
@@ -59,7 +59,7 @@
 			"lightColor" : "rgba(235, 91, 87, 1)",
 			"blackColor" : "rgba(206, 75, 67, 1)",
 			"content" : {
-				"images" : ["img/projects/opi_@2x.png"],
+				"images" : ["img/projects/opi_@2x.png","img/projects/opi-01@2x.png"],
 				"context" : "TBWA\\DanParis",
 				"persons" : [
 					{
@@ -85,7 +85,7 @@
 			"lightColor" : "rgba(244, 175, 59, 1)",
 			"blackColor" : "rgba(206, 140, 47, 1)",
 			"content" : {
-				"images" : ["img/projects/coated_@2x.png"],
+				"images" : ["img/projects/coated_@2x.png","img/projects/coated_1@2x.png"],
 				"context" : "",
 				"persons" : [
 					{
@@ -106,7 +106,7 @@
 					}
 				],
 				"role" : "iOS Developer",
-				"url" : "http://maximerimbert.fr/",
+				"url" : "https://vimeo.com/140925608",
 				"description" : "Coated is a conceptual news app. done with the Reuters fondation. Because of the news surplus in Media, it promotes a context for each news with the possibility for the user to follow the evolution of each one of the news due to the stories concept. The app is based on the idea of building layers of information which the users can read depending on the amount of time they have."
 			}
 		},
@@ -150,7 +150,7 @@
 				],
 				"role" : "Front-End Developer",
 				"awards" : "Silver Lion / Mobile of the Day FWA / Site of the Day Awwwards",
-				"url" : "http://www.blogdumoderateur.com/defi-ingenieurs-serious-game-sncf/",
+				"url" : "http://louisansa.com/project/defi-ingenieurs",
 				"description" : "Défi Ingénieurs is a serious game that immerses students in the universe of the SNCF. This game aims to discover real problems of SNCF engineers, while giving an overview of the issues of the trade. Future engineers can explore the tasks to SNCF employees and project through the challenges offered by the game."
 			}
 		}	

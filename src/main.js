@@ -3,8 +3,7 @@ import async from 'async';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import _ from '_';
-import {i18n, Localize, logger, Is} from 'dan';
-
+import {i18n, Localize, logger, Is, assets} from 'dan';
 import App from 'components/app';
 
 import router from './router';
@@ -77,6 +76,19 @@ setup.push(function(next) {
 		}
 	};
 	app.updateSignal.add(listen);
+});
+
+// Get data
+setup.push(function(next) {
+	var data = i18n.localize('data', null, 'data', i18n.locale);
+	var promises = [];
+	_.forEach(data, (project, index) => {
+		_.forEach(project.content.images, (image, subIndex) => {
+			console.log('project_'+project.name+"_"+subIndex);
+			promises.push(assets.add(config.path+image,'project_'+project.name+"_"+subIndex));
+		}); 
+	});
+	Promise.all(promises).then(next);
 });
 
 // Launch app

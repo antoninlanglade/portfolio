@@ -1,0 +1,10 @@
+@import "~config/styles.scss";
+
+.desktopApp .component.image {
+  overflow: hidden;
+  position: relative;
+
+  img {
+    position: absolute;
+  }
+}

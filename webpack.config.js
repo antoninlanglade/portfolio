@@ -21,6 +21,7 @@ module.exports = {
             // Libs
             'dan': __dirname+'/src/bundles/dan',
             'tools': __dirname+'/src/bundles/tools',
+            'math': __dirname+'/src/bundles/math',
             'events': __dirname+'/node_modules/events/events.js',
             'async': __dirname+'/node_modules/async/lib/async.js',
             'jquery': __dirname+'/node_modules/jquery/dist/jquery.min.js',

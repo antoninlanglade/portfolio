@@ -9,27 +9,31 @@
 	transform : rotate(-90deg);
 	transform-origin : 0 50%;
 	a {
-		margin : 0 10px;
+		margin : 0 20px;
+		font-size: 14.5px;
 	}
 	&.animationIn {
 		left : 70px;
 		opacity : 1;
 	}
 	.locale {
-		opacity : 0.6;
+		margin: 0 20px;
+		
 		display : inline-block;
 	    cursor: pointer;
 	    transition : opacity 0.25s;
 	    transition-delay : 0.25s;
 	    a {
-	      margin : 0px;
-	      &.current {
-	        text-decoration: underline;
-	      } 
+	    	opacity : 0.6;
+	      	margin : 0px;
+		    &.current {
+		      opacity : 1;
+		    } 
 	    }
  	}
  	.separator {
  		color : #999999;
  		margin: 0 2px;
+ 		opacity : 0.6;
  	}
 }

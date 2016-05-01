@@ -53,6 +53,11 @@
 	  			background: #ff605d;
 	  		}
 	  	}
+	  	&.darkblue {
+	  		&:after, &:before {
+	  			background: #0f1b30;
+	  		}
+	  	}
 	  	&:after, &:before {
 	  		content : "";
 	  		position : absolute;

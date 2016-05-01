@@ -37,11 +37,11 @@ export default class About extends React.Component {
                     <div className="keys">
                         <div className="context key">
                             <span className="left-column"><Localize>twitter</Localize></span>
-                            <span className="right-column"><Localize>twitter-me</Localize></span>
+                            <span className="right-column"><Link href="https://twitter.com/antoninlanglade" target="blank"><Localize>twitter-me</Localize></Link></span>
                         </div>
                         <div className="context key">
                             <span className="left-column"><Localize>email</Localize></span>
-                            <span className="right-column"><Localize>email-me</Localize></span>
+                            <span className="right-column"><a href="mailto:antonin.langlade@gmail.com"><Localize>email-me</Localize></a></span>
                         </div>
                         <div className="context key">
                             <span className="left-column"><Localize>phone</Localize></span>

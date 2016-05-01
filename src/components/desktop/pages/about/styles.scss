@@ -5,7 +5,8 @@
 	height : 100%;
 	&.animationIn {
 		.left-block {
-			width : 50%;
+			right : 50%;
+			opacity : 1;
 		}
 		.right-block {
 			opacity: 1;
@@ -16,7 +17,8 @@
 	}
 	&.animationOut {
 		.left-block {
-			width : 0%;
+			right : calc(50% - 60px);
+			opacity : 0;
 		}
 		.right-block {
 			opacity: 0;
@@ -29,8 +31,8 @@
 	}
 	.close {
 		position : absolute;
-		top: -40px;
-    	right: 10px;
+		top: -60px;
+    	right: 50px;
 		padding : 10px;
 		opacity : 0;
 		transition : opacity 0.5s;
@@ -48,14 +50,17 @@
   }
   .left-block {
   	height: 100%;
-	width: 0;
+	width: 50%;
 	background-size: cover;
 	background-position: center top;
 	text-align: center;
-	right : 50%;
-	transition : 0.3s width;
+	right : calc(50% - 60px);
+	opacity : 0;
+	transition : 0.3s all;
+	z-index: 1;
   }
   .right-block {
+	z-index: 2;
   	right : 0;
 	width: calc(50% - 140px);
 	margin: 0 70px 0 70px;
@@ -96,6 +101,8 @@
 	}
 	.description {
 		margin: 0 0 40px 0;
+		font-size: 17px;
+		line-height: 26.5px;
 	}
   }
 }

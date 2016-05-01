@@ -26,7 +26,7 @@ body, html, #container.mobileApp {
 	user-select: none;
 }
 #container.mobileApp {
-	overflow-y : none;
+	
 }
 a {
 	text-decoration: none;
@@ -35,7 +35,10 @@ a {
 // App
 .mobileApp .component.app {
 	font-family : "Apercu";
-	position : relative;
+	position : absolute;
+	top: 0;
+	left: 0;
+	min-height: 100%;
 	width : 0%;
 	background : #f2f2f2;
 	.page {

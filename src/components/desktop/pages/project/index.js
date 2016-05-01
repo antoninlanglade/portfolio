@@ -7,7 +7,6 @@ import {AnimationComponent} from 'tools/animation';
 import './styles.scss';
 import 'gsap';
 
-
 @i18nComponent
 @AnimationComponent
 export default class Description extends React.Component {
@@ -121,7 +120,7 @@ export default class Description extends React.Component {
                 </div>
                 <div className="left-block" ref="leftBlock" style={{backgroundColor:this.data.lightColor}}>
                     <div className="imageDescription" ref="imageDescription" style={{backgroundImage: 'url('+config.path+this.data.content.images[this.currentImage]+')'}} />
-                    <Link href={this.data.content.url} ref="url1" target="_blank" className="url line-hover"><Localize>visit website</Localize></Link>
+                    <Link href={this.data.content.url} ref="url1" target="_blank" className={this.data.color+" url line-hover"}><Localize>visit website</Localize></Link>
                     <div className="percent" ref="percent"></div>
                 </div>
                 <div className="right-block">
@@ -138,7 +137,7 @@ export default class Description extends React.Component {
                     <div className="credits">
                         <Localize>credits</Localize> {this.data.name}
                     </div>
-                    <Link href={this.data.content.url} target="_blank" ref="url2" className="url line-hover"><Localize>visit website</Localize></Link>
+                    <Link href={this.data.content.url} target="_blank" ref="url2" className={"url line-hover"}><Localize>visit website</Localize></Link>
                 </div>
             </div>
         );

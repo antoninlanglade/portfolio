@@ -29,8 +29,12 @@ export default class Projects extends React.Component {
       if (direction===Projects.direction.IN) {
         _.forEach(this.dom, (item, currentKey) => {
             if (key !== currentKey) {
-              item.style.color = "rgba(0,0,0,0.25)";  
-            }      
+              item.style.color = "rgba(0,0,0,0.25)";
+              item.classList.add('disable');
+            } 
+            else {
+              item.classList.remove('disable');
+            }     
         });
       }
       else if (direction===Projects.direction.OUT) {
