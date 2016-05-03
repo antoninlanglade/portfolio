@@ -42,6 +42,7 @@ export default class About extends React.Component {
                     <div className="description">
                         <Localize>long-description</Localize>
                     </div>
+                    <div className="thanks"><Localize>thanks</Localize></div>
                 </div>
             </div>
         );

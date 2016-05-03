@@ -78,11 +78,6 @@ export default class Home extends React.Component {
         });
     }
 
-    testScroll(e) {
-
-      console.log('test',e);
-    }
-
     goTo(direction) {
         // If out of bounds
         if (!this.isItemWithDirection(this.index, direction)) {
@@ -112,10 +107,6 @@ export default class Home extends React.Component {
         this.animateItems();
 
         this.dom.projectList.style.transform = "translate3d("+(-this.offsetLeft*100/3)+"%, 0, 0)";
-        this.dom.projectList.addEventListener('animationend', () => {
-            console.log('test');
-            this.canWheel = true;
-        });
         
     }
     isItemWithDirection(index, direction) {

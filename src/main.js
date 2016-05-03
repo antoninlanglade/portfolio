@@ -84,7 +84,6 @@ setup.push(function(next) {
 	var promises = [];
 	_.forEach(data, (project, index) => {
 		_.forEach(project.content.images, (image, subIndex) => {
-			console.log('project_'+project.name+"_"+subIndex);
 			promises.push(assets.add(config.path+image,'project_'+project.name+"_"+subIndex));
 		}); 
 	});
