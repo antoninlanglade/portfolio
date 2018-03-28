@@ -1,0 +1,141 @@
+:root {
+  --ease: cubic-bezier(0.307, 0.590, 0.278, 0.865);
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  color: white;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing : antialiased;
+}
+
+.rocket {
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translate(-100%, -50%);
+}
+
+h1 {
+  position: relative;
+  font-size: 20px;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 16px;
+  letter-spacing: 1.03px;
+  margin: -2px 0 0 0;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+}
+
+.content {
+  display: inline-block;
+  position: relative;
+  padding: 100px 0 100px 100px;
+  z-index: 3;
+
+  .mobile & {
+    padding: 50px 0 20px 60px;
+  }
+}
+
+.date {
+  margin: 0 0 0 5px;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.links {
+  margin: 40px 0 0;
+  font-size: 13px;
+
+  a {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: white;
+      transform: scaleX(0);
+      transition: 0.8s transform;
+      transition-timing-function: var(--ease);
+    }
+
+    .desktop & {
+      &:hover {
+        &::after, &::before {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    &::before {
+      top: -5px;
+      transform-origin: 0 50%;
+    }
+  }
+
+  * {
+    margin: 0 0 0 20px;
+    &:first-child {
+      margin: 0;
+    }
+  }
+}
+
+.projects {
+  display: inline-block;
+  margin: 30px 0 0;
+
+  a {
+    display: inline-block;
+    transition: 0.4s color;
+
+    &::after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: 0.8s all;
+      transition-timing-function: var(--ease);
+    }
+  }
+
+  li {
+    position: relative;
+    margin: 0 0 0 -10px;
+    padding: 0;
+
+    a {
+      padding: 10px 10px;
+      box-sizing: border-box;
+
+      .desktop & {
+        &:hover {
+          color: black;
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+}

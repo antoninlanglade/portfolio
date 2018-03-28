@@ -1,18 +1,11 @@
-# Tmp
-dist
-.tmp
-.tmp-dist
-
-# Modules
-src/bundles/dan/modules/modules.js
-
-# Deploy
-./deploy.config.json
-deploy.config.json
-backup
-
-# Other
+# Mac
 .DS_Store
-.idea
-node_modules
-npm-debug.log
+
+# Stats
+stats.json
+
+# Node
+/node_modules
+
+# Build
+build/
